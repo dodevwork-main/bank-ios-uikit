@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B4DA8A012C08885800FECCEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A002C08885800FECCEF /* AppDelegate.swift */; };
-		B4DA8A032C08885800FECCEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A022C08885800FECCEF /* SceneDelegate.swift */; };
-		B4DA8A052C08885800FECCEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A042C08885800FECCEF /* ViewController.swift */; };
-		B4DA8A082C08885800FECCEF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B4DA8A072C08885800FECCEF /* Base */; };
 		B4DA8A0A2C08885900FECCEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DA8A092C08885900FECCEF /* Assets.xcassets */; };
 		B4DA8A0D2C08885900FECCEF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B4DA8A0C2C08885900FECCEF /* Base */; };
+		B4DA8A182C0892C700FECCEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A172C0892C700FECCEF /* SceneDelegate.swift */; };
+		B4DA8A212C08943E00FECCEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A202C08943E00FECCEF /* User.swift */; };
+		B4DA8A292C08950200FECCEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A282C08950200FECCEF /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4DA89FD2C08885800FECCEF /* bank-ios-uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bank-ios-uikit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DA8A002C08885800FECCEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4DA8A022C08885800FECCEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B4DA8A042C08885800FECCEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4DA8A072C08885800FECCEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4DA8A092C08885900FECCEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4DA8A0C2C08885900FECCEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4DA8A0E2C08885900FECCEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4DA8A172C0892C700FECCEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B4DA8A202C08943E00FECCEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B4DA8A282C08950200FECCEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,103 @@
 		B4DA89FF2C08885800FECCEF /* bank-ios-uikit */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A142C088EE600FECCEF /* Files */,
+				B4DA8A172C0892C700FECCEF /* SceneDelegate.swift */,
 				B4DA8A002C08885800FECCEF /* AppDelegate.swift */,
-				B4DA8A022C08885800FECCEF /* SceneDelegate.swift */,
-				B4DA8A042C08885800FECCEF /* ViewController.swift */,
-				B4DA8A062C08885800FECCEF /* Main.storyboard */,
+				B4DA8A1D2C08940800FECCEF /* Common */,
+				B4DA8A1B2C0893EC00FECCEF /* Modules */,
+			);
+			path = "bank-ios-uikit";
+			sourceTree = "<group>";
+		};
+		B4DA8A142C088EE600FECCEF /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				B4DA8A092C08885900FECCEF /* Assets.xcassets */,
 				B4DA8A0B2C08885900FECCEF /* LaunchScreen.storyboard */,
 				B4DA8A0E2C08885900FECCEF /* Info.plist */,
 			);
-			path = "bank-ios-uikit";
+			name = Files;
+			sourceTree = "<group>";
+		};
+		B4DA8A1B2C0893EC00FECCEF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A242C08946000FECCEF /* League */,
+				B4DA8A232C08945A00FECCEF /* Main */,
+				B4DA8A222C08945400FECCEF /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B4DA8A1D2C08940800FECCEF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A1F2C08942400FECCEF /* Entities */,
+				B4DA8A1E2C08941500FECCEF /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B4DA8A1E2C08941500FECCEF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B4DA8A1F2C08942400FECCEF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A202C08943E00FECCEF /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B4DA8A222C08945400FECCEF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A272C08948900FECCEF /* PinCode */,
+				B4DA8A262C08948300FECCEF /* Password */,
+				B4DA8A252C08947A00FECCEF /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B4DA8A232C08945A00FECCEF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B4DA8A242C08946000FECCEF /* League */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = League;
+			sourceTree = "<group>";
+		};
+		B4DA8A252C08947A00FECCEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A282C08950200FECCEF /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B4DA8A262C08948300FECCEF /* Password */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		B4DA8A272C08948900FECCEF /* PinCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PinCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +215,6 @@
 			files = (
 				B4DA8A0A2C08885900FECCEF /* Assets.xcassets in Resources */,
 				B4DA8A0D2C08885900FECCEF /* Base in Resources */,
-				B4DA8A082C08885800FECCEF /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +225,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4DA8A052C08885800FECCEF /* ViewController.swift in Sources */,
+				B4DA8A212C08943E00FECCEF /* User.swift in Sources */,
 				B4DA8A012C08885800FECCEF /* AppDelegate.swift in Sources */,
-				B4DA8A032C08885800FECCEF /* SceneDelegate.swift in Sources */,
+				B4DA8A292C08950200FECCEF /* LoginViewController.swift in Sources */,
+				B4DA8A182C0892C700FECCEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B4DA8A062C08885800FECCEF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B4DA8A072C08885800FECCEF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B4DA8A0B2C08885900FECCEF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +376,6 @@
 				INFOPLIST_FILE = "bank-ios-uikit/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +402,6 @@
 				INFOPLIST_FILE = "bank-ios-uikit/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
