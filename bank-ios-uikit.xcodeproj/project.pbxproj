@@ -13,6 +13,22 @@
 		B4DA8A182C0892C700FECCEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A172C0892C700FECCEF /* SceneDelegate.swift */; };
 		B4DA8A212C08943E00FECCEF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A202C08943E00FECCEF /* User.swift */; };
 		B4DA8A292C08950200FECCEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A282C08950200FECCEF /* LoginViewController.swift */; };
+		B4DA8A2D2C08A56500FECCEF /* AnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A2C2C08A56500FECCEF /* AnyView.swift */; };
+		B4DA8A2F2C08A59400FECCEF /* AnyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A2E2C08A59400FECCEF /* AnyInteractor.swift */; };
+		B4DA8A312C08A5A800FECCEF /* AnyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A302C08A5A800FECCEF /* AnyPresenter.swift */; };
+		B4DA8A332C08A5C100FECCEF /* AnyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A322C08A5C100FECCEF /* AnyRouter.swift */; };
+		B4DA8A352C08A60C00FECCEF /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A342C08A60C00FECCEF /* LoginRouter.swift */; };
+		B4DA8A392C08A63300FECCEF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A382C08A63300FECCEF /* LoginPresenter.swift */; };
+		B4DA8A3B2C08AA2600FECCEF /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */; };
+		B4DA8A3D2C08B5B200FECCEF /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */; };
+		B4DA8A402C08D86600FECCEF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3F2C08D86600FECCEF /* Theme.swift */; };
+		B4DA8A422C09B88300FECCEF /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */; };
+		B4DA8A442C09B89200FECCEF /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */; };
+		B4DA8A462C09B8A400FECCEF /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A452C09B8A400FECCEF /* PasswordRouter.swift */; };
+		B4DA8A482C09BE4E00FECCEF /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A472C09BE4E00FECCEF /* PinCodeViewController.swift */; };
+		B4DA8A4A2C09BE6B00FECCEF /* PinCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A492C09BE6B00FECCEF /* PinCodeInteractor.swift */; };
+		B4DA8A4C2C09BE7D00FECCEF /* PinCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A4B2C09BE7D00FECCEF /* PinCodePresenter.swift */; };
+		B4DA8A4E2C09BE8B00FECCEF /* PinCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A4D2C09BE8B00FECCEF /* PinCodeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +40,22 @@
 		B4DA8A172C0892C700FECCEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B4DA8A202C08943E00FECCEF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4DA8A282C08950200FECCEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B4DA8A2C2C08A56500FECCEF /* AnyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyView.swift; sourceTree = "<group>"; };
+		B4DA8A2E2C08A59400FECCEF /* AnyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyInteractor.swift; sourceTree = "<group>"; };
+		B4DA8A302C08A5A800FECCEF /* AnyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPresenter.swift; sourceTree = "<group>"; };
+		B4DA8A322C08A5C100FECCEF /* AnyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRouter.swift; sourceTree = "<group>"; };
+		B4DA8A342C08A60C00FECCEF /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		B4DA8A382C08A63300FECCEF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		B4DA8A3F2C08D86600FECCEF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		B4DA8A452C09B8A400FECCEF /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
+		B4DA8A472C09BE4E00FECCEF /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
+		B4DA8A492C09BE6B00FECCEF /* PinCodeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeInteractor.swift; sourceTree = "<group>"; };
+		B4DA8A4B2C09BE7D00FECCEF /* PinCodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodePresenter.swift; sourceTree = "<group>"; };
+		B4DA8A4D2C09BE8B00FECCEF /* PinCodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +88,11 @@
 		B4DA89FF2C08885800FECCEF /* bank-ios-uikit */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A1D2C08940800FECCEF /* Common */,
 				B4DA8A142C088EE600FECCEF /* Files */,
+				B4DA8A1B2C0893EC00FECCEF /* Modules */,
 				B4DA8A172C0892C700FECCEF /* SceneDelegate.swift */,
 				B4DA8A002C08885800FECCEF /* AppDelegate.swift */,
-				B4DA8A1D2C08940800FECCEF /* Common */,
-				B4DA8A1B2C0893EC00FECCEF /* Modules */,
 			);
 			path = "bank-ios-uikit";
 			sourceTree = "<group>";
@@ -88,6 +120,8 @@
 		B4DA8A1D2C08940800FECCEF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A3E2C08D84600FECCEF /* Constants */,
+				B4DA8A2A2C08A52400FECCEF /* Lib */,
 				B4DA8A1F2C08942400FECCEF /* Entities */,
 				B4DA8A1E2C08941500FECCEF /* UI */,
 			);
@@ -97,6 +131,8 @@
 		B4DA8A1E2C08941500FECCEF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */,
+				B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -137,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				B4DA8A282C08950200FECCEF /* LoginViewController.swift */,
+				B4DA8A382C08A63300FECCEF /* LoginPresenter.swift */,
+				B4DA8A342C08A60C00FECCEF /* LoginRouter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -144,6 +182,9 @@
 		B4DA8A262C08948300FECCEF /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */,
+				B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */,
+				B4DA8A452C09B8A400FECCEF /* PasswordRouter.swift */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -151,8 +192,39 @@
 		B4DA8A272C08948900FECCEF /* PinCode */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A472C09BE4E00FECCEF /* PinCodeViewController.swift */,
+				B4DA8A492C09BE6B00FECCEF /* PinCodeInteractor.swift */,
+				B4DA8A4B2C09BE7D00FECCEF /* PinCodePresenter.swift */,
+				B4DA8A4D2C09BE8B00FECCEF /* PinCodeRouter.swift */,
 			);
 			path = PinCode;
+			sourceTree = "<group>";
+		};
+		B4DA8A2A2C08A52400FECCEF /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A2B2C08A53300FECCEF /* Viper */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		B4DA8A2B2C08A53300FECCEF /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A2C2C08A56500FECCEF /* AnyView.swift */,
+				B4DA8A2E2C08A59400FECCEF /* AnyInteractor.swift */,
+				B4DA8A302C08A5A800FECCEF /* AnyPresenter.swift */,
+				B4DA8A322C08A5C100FECCEF /* AnyRouter.swift */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
+		B4DA8A3E2C08D84600FECCEF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A3F2C08D86600FECCEF /* Theme.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +298,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4DA8A212C08943E00FECCEF /* User.swift in Sources */,
+				B4DA8A2D2C08A56500FECCEF /* AnyView.swift in Sources */,
+				B4DA8A462C09B8A400FECCEF /* PasswordRouter.swift in Sources */,
+				B4DA8A312C08A5A800FECCEF /* AnyPresenter.swift in Sources */,
+				B4DA8A332C08A5C100FECCEF /* AnyRouter.swift in Sources */,
+				B4DA8A392C08A63300FECCEF /* LoginPresenter.swift in Sources */,
 				B4DA8A012C08885800FECCEF /* AppDelegate.swift in Sources */,
+				B4DA8A352C08A60C00FECCEF /* LoginRouter.swift in Sources */,
+				B4DA8A3B2C08AA2600FECCEF /* AuthButton.swift in Sources */,
+				B4DA8A4E2C09BE8B00FECCEF /* PinCodeRouter.swift in Sources */,
+				B4DA8A3D2C08B5B200FECCEF /* AuthTextField.swift in Sources */,
 				B4DA8A292C08950200FECCEF /* LoginViewController.swift in Sources */,
+				B4DA8A4A2C09BE6B00FECCEF /* PinCodeInteractor.swift in Sources */,
 				B4DA8A182C0892C700FECCEF /* SceneDelegate.swift in Sources */,
+				B4DA8A422C09B88300FECCEF /* PasswordViewController.swift in Sources */,
+				B4DA8A442C09B89200FECCEF /* PasswordPresenter.swift in Sources */,
+				B4DA8A482C09BE4E00FECCEF /* PinCodeViewController.swift in Sources */,
+				B4DA8A2F2C08A59400FECCEF /* AnyInteractor.swift in Sources */,
+				B4DA8A402C08D86600FECCEF /* Theme.swift in Sources */,
+				B4DA8A4C2C09BE7D00FECCEF /* PinCodePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
