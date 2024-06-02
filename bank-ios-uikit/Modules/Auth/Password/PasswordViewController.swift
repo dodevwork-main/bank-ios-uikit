@@ -20,6 +20,7 @@ final class PasswordViewController: UIViewController, PasswordViewControllerProt
         
         textField.placeholder = "Пароль"
         textField.secureField()
+        textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
         
         return textField
     }()
@@ -27,31 +28,29 @@ final class PasswordViewController: UIViewController, PasswordViewControllerProt
     private lazy var authButton: UIButton = {
         let button = AuthButton()
         
+        button.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
+        
         return button
     }()
     
-    private lazy var titleLalbel: UILabel = {
-        let label = UILabel()
+    private lazy var titleLalbel: AuthTitleLabel = {
+        let label = AuthTitleLabel()
         
         label.text = "Остался пароль"
-        label.textColor = .white
         
         return label
     }()
     
-    private lazy var captioLabel: UILabel = {
-        let label = UILabel()
+    private lazy var captioLabel: AuthCaptionLabel = {
+        let label = AuthCaptionLabel()
         
         label.text = "Убедимся, что это точно вы"
-        label.textColor = .lightGray
         
         return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = AUTH_BACKGROUND_COLOR
         
         configeViewComponents()
     }
@@ -66,27 +65,21 @@ final class PasswordViewController: UIViewController, PasswordViewControllerProt
         view.addSubview(textField)
         view.addSubview(authButton)
         
-        textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
-        authButton.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
-        
-        titleLalbel.translatesAutoresizingMaskIntoConstraints = false
-        captioLabel.translatesAutoresizingMaskIntoConstraints = false
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        authButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
-            titleLalbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            titleLalbel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLalbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            titleLalbel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            titleLalbel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+
+            captioLabel.topAnchor.constraint(equalTo: titleLalbel.bottomAnchor, constant: 8),
+            captioLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            captioLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             
-            captioLabel.topAnchor.constraint(equalTo: titleLalbel.bottomAnchor),
-            captioLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textField.topAnchor.constraint(equalTo: captioLabel.bottomAnchor, constant: 32),
+            textField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
             
-            textField.topAnchor.constraint(equalTo: captioLabel.bottomAnchor),
-            textField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            textField.rightAnchor.constraint(equalTo: view.rightAnchor),
-            
-            authButton.leftAnchor.constraint(equalTo: view.leftAnchor),
-            authButton.rightAnchor.constraint(equalTo: view.rightAnchor),
+            authButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            authButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
             authButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -24)
         ])
     }

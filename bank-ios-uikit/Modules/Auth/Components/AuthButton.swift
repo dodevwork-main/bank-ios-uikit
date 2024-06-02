@@ -32,9 +32,10 @@ class AuthButton: UIButton {
     }
     
     private func setup() {
-        layer.cornerRadius = 10
-        setTitle("Продолжить", for: .normal)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.cornerRadius = 10
+        self.setTitle("Продолжить", for: .normal)
         
-        isEnabled = false
+        self.isEnabled = false
     }
 }

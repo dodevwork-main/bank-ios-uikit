@@ -19,12 +19,15 @@ final class LoginViewController: UIViewController, LoginViewControllerProtocol {
         let textField = AuthTextField()
         
         textField.placeholder = "Логин"
+        textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
         
         return textField
     }()
     
     private lazy var authButton: UIButton = {
         let button = AuthButton()
+        
+        button.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
         
         return button
     }()
@@ -45,19 +48,13 @@ final class LoginViewController: UIViewController, LoginViewControllerProtocol {
         view.addSubview(textField)
         view.addSubview(authButton)
         
-        textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
-        authButton.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        authButton.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            textField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            textField.rightAnchor.constraint(equalTo: view.rightAnchor),
+            textField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
             
-            authButton.leftAnchor.constraint(equalTo: view.leftAnchor),
-            authButton.rightAnchor.constraint(equalTo: view.rightAnchor),
+            authButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            authButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
             authButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -24)
         ])
     }
@@ -73,6 +70,4 @@ final class LoginViewController: UIViewController, LoginViewControllerProtocol {
     @objc func touchUpInsideAuthButton() {
         presenter?.router?.goToPassword()
     }
-    
-    
 }

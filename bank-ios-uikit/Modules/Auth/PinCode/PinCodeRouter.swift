@@ -36,7 +36,10 @@ final class PinCodeRouter: PinCodeRouterProtocol {
     }
     
     func goToMainModule() {
-        print("goToMainModule")
+        let mainModuleViewController = HomeViewController()
+        guard let viewController = self.entry else { return }
+        
+        viewController.navigationController?.pushViewController(mainModuleViewController, animated: true)
     }
     
 }

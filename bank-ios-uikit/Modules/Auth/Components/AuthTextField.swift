@@ -40,6 +40,7 @@ class AuthTextField: UITextField {
     }
 
     private func setup() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.autocorrectionType = .no
         self.autocapitalizationType = .none
         self.becomeFirstResponder()
