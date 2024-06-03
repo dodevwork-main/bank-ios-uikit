@@ -83,7 +83,7 @@ extension PinCodeViewController: AuthPinCodeKeyboardDelegate {
         self.points.addOne()
         
         if self.pinCodeValue.count == 4 {
-            print(self.pinCodeValue)
+            presenter?.setPinCode(self.pinCodeValue)
         }
     }
 }

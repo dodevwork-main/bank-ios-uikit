@@ -21,7 +21,7 @@
 		B4DA8A392C08A63300FECCEF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A382C08A63300FECCEF /* LoginPresenter.swift */; };
 		B4DA8A3B2C08AA2600FECCEF /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */; };
 		B4DA8A3D2C08B5B200FECCEF /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */; };
-		B4DA8A402C08D86600FECCEF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3F2C08D86600FECCEF /* Theme.swift */; };
+		B4DA8A402C08D86600FECCEF /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3F2C08D86600FECCEF /* Main.swift */; };
 		B4DA8A422C09B88300FECCEF /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */; };
 		B4DA8A442C09B89200FECCEF /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */; };
 		B4DA8A462C09B8A400FECCEF /* PasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A452C09B8A400FECCEF /* PasswordRouter.swift */; };
@@ -36,6 +36,7 @@
 		B4DA8A642C0D13F600FECCEF /* AuthPinCodeKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A632C0D13F600FECCEF /* AuthPinCodeKeyboard.swift */; };
 		B4DA8A662C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A652C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift */; };
 		B4DA8A6A2C0D2A1300FECCEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */; };
+		B4DA8A6E2C0D3F6A00FECCEF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A6D2C0D3F6A00FECCEF /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +56,7 @@
 		B4DA8A382C08A63300FECCEF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
-		B4DA8A3F2C08D86600FECCEF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B4DA8A3F2C08D86600FECCEF /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
 		B4DA8A452C09B8A400FECCEF /* PasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRouter.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		B4DA8A632C0D13F600FECCEF /* AuthPinCodeKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPinCodeKeyboard.swift; sourceTree = "<group>"; };
 		B4DA8A652C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPinCodeKeyboardButton.swift; sourceTree = "<group>"; };
 		B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B4DA8A6D2C0D3F6A00FECCEF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,16 +139,8 @@
 				B4DA8A3E2C08D84600FECCEF /* Constants */,
 				B4DA8A2A2C08A52400FECCEF /* Lib */,
 				B4DA8A1F2C08942400FECCEF /* Entities */,
-				B4DA8A1E2C08941500FECCEF /* UI */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		B4DA8A1E2C08941500FECCEF /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		B4DA8A1F2C08942400FECCEF /* Entities */ = {
@@ -219,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				B4DA8A2B2C08A53300FECCEF /* Viper */,
+				B4DA8A6D2C0D3F6A00FECCEF /* API.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -237,7 +232,7 @@
 		B4DA8A3E2C08D84600FECCEF /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				B4DA8A3F2C08D86600FECCEF /* Theme.swift */,
+				B4DA8A3F2C08D86600FECCEF /* Main.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -364,6 +359,7 @@
 				B4DA8A462C09B8A400FECCEF /* PasswordRouter.swift in Sources */,
 				B4DA8A312C08A5A800FECCEF /* AnyPresenter.swift in Sources */,
 				B4DA8A332C08A5C100FECCEF /* AnyRouter.swift in Sources */,
+				B4DA8A6E2C0D3F6A00FECCEF /* API.swift in Sources */,
 				B4DA8A392C08A63300FECCEF /* LoginPresenter.swift in Sources */,
 				B4DA8A012C08885800FECCEF /* AppDelegate.swift in Sources */,
 				B4DA8A532C0CFF0700FECCEF /* AuthCaptionLabel.swift in Sources */,
@@ -383,7 +379,7 @@
 				B4DA8A642C0D13F600FECCEF /* AuthPinCodeKeyboard.swift in Sources */,
 				B4DA8A482C09BE4E00FECCEF /* PinCodeViewController.swift in Sources */,
 				B4DA8A2F2C08A59400FECCEF /* AnyInteractor.swift in Sources */,
-				B4DA8A402C08D86600FECCEF /* Theme.swift in Sources */,
+				B4DA8A402C08D86600FECCEF /* Main.swift in Sources */,
 				B4DA8A4C2C09BE7D00FECCEF /* PinCodePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

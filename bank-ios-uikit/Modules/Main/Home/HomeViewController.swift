@@ -14,5 +14,6 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
     }
 }

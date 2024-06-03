@@ -24,11 +24,14 @@ final class PinCodeRouter: PinCodeRouterProtocol {
         
         let viewController = PinCodeViewController()
         let presenter = PinCodePresenter()
+        let interactor = PinCodeInteractor()
         
         viewController.presenter = presenter
+        interactor.presenter = presenter
         
         presenter.router = router
         presenter.viewController = viewController
+        presenter.interactor = interactor
         
         router.entry = viewController
         
