@@ -37,6 +37,9 @@
 		B4DA8A662C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A652C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift */; };
 		B4DA8A6A2C0D2A1300FECCEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */; };
 		B4DA8A6E2C0D3F6A00FECCEF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A6D2C0D3F6A00FECCEF /* API.swift */; };
+		B4DA8A732C0E125C00FECCEF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A722C0E125C00FECCEF /* CoreDataManager.swift */; };
+		B4DA8A792C0E1FEF00FECCEF /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A772C0E1FEF00FECCEF /* CoreData.xcdatamodeld */; };
+		B4DA8A812C0E21B900FECCEF /* CurrentUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A7F2C0E21B900FECCEF /* CurrentUser+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		B4DA8A652C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPinCodeKeyboardButton.swift; sourceTree = "<group>"; };
 		B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B4DA8A6D2C0D3F6A00FECCEF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B4DA8A722C0E125C00FECCEF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B4DA8A782C0E1FEF00FECCEF /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		B4DA8A7F2C0E21B900FECCEF /* CurrentUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		B4DA89F42C08885800FECCEF = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A7F2C0E21B900FECCEF /* CurrentUser+CoreDataProperties.swift */,
 				B4DA89FF2C08885800FECCEF /* bank-ios-uikit */,
 				B4DA89FE2C08885800FECCEF /* Products */,
 			);
@@ -212,6 +219,7 @@
 		B4DA8A2A2C08A52400FECCEF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				B4DA8A6F2C0E112100FECCEF /* CoreData */,
 				B4DA8A2B2C08A53300FECCEF /* Viper */,
 				B4DA8A6D2C0D3F6A00FECCEF /* API.swift */,
 			);
@@ -281,6 +289,15 @@
 				B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B4DA8A6F2C0E112100FECCEF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A722C0E125C00FECCEF /* CoreDataManager.swift */,
+				B4DA8A772C0E1FEF00FECCEF /* CoreData.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,14 +387,17 @@
 				B4DA8A3D2C08B5B200FECCEF /* AuthTextField.swift in Sources */,
 				B4DA8A6A2C0D2A1300FECCEF /* HomeViewController.swift in Sources */,
 				B4DA8A292C08950200FECCEF /* LoginViewController.swift in Sources */,
+				B4DA8A792C0E1FEF00FECCEF /* CoreData.xcdatamodeld in Sources */,
 				B4DA8A4A2C09BE6B00FECCEF /* PinCodeInteractor.swift in Sources */,
 				B4DA8A182C0892C700FECCEF /* SceneDelegate.swift in Sources */,
 				B4DA8A662C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift in Sources */,
+				B4DA8A732C0E125C00FECCEF /* CoreDataManager.swift in Sources */,
 				B4DA8A512C0CFEFA00FECCEF /* AuthTitleLabel.swift in Sources */,
 				B4DA8A422C09B88300FECCEF /* PasswordViewController.swift in Sources */,
 				B4DA8A442C09B89200FECCEF /* PasswordPresenter.swift in Sources */,
 				B4DA8A642C0D13F600FECCEF /* AuthPinCodeKeyboard.swift in Sources */,
 				B4DA8A482C09BE4E00FECCEF /* PinCodeViewController.swift in Sources */,
+				B4DA8A812C0E21B900FECCEF /* CurrentUser+CoreDataProperties.swift in Sources */,
 				B4DA8A2F2C08A59400FECCEF /* AnyInteractor.swift in Sources */,
 				B4DA8A402C08D86600FECCEF /* Main.swift in Sources */,
 				B4DA8A4C2C09BE7D00FECCEF /* PinCodePresenter.swift in Sources */,
@@ -591,6 +611,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B4DA8A772C0E1FEF00FECCEF /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B4DA8A782C0E1FEF00FECCEF /* CoreData.xcdatamodel */,
+			);
+			currentVersion = B4DA8A782C0E1FEF00FECCEF /* CoreData.xcdatamodel */;
+			name = CoreData.xcdatamodeld;
+			path = "/Users/ruartm5/Developer/dev/swift/bank-ios-uikit/bank-ios-uikit/Common/Lib/CoreData/CoreData.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B4DA89F52C08885800FECCEF /* Project object */;
 }

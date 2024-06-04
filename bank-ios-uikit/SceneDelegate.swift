@@ -15,6 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        print(CoreDataManager.shared.fetchCurrentUser(pinCode: "1231") ?? "")
+        
         let router = LoginRouter.start()
         let initialViewController = router.entry!
                 
