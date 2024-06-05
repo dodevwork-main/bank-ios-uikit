@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthTextField: UITextField {
+final class AuthTextField: UITextField {
     
     override var isSecureTextEntry: Bool {
         didSet {
@@ -40,15 +40,13 @@ class AuthTextField: UITextField {
     }
 
     private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         self.autocorrectionType = .no
         self.autocapitalizationType = .none
-        self.becomeFirstResponder()
                 
         self.textColor = .white
         self.attributedPlaceholder = NSAttributedString(
             string: "Placeholder",
-            attributes: [NSAttributedString.Key.foregroundColor: AUTH_TEXT_COLOR]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
     }
     

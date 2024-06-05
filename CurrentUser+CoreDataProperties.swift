@@ -13,7 +13,8 @@ import CoreData
 class CurrentUser: NSManagedObject {}
 
 extension CurrentUser {
-
+    static let name = "CurrentUser"
+    
     @NSManaged public var id: String?
     @NSManaged public var name: String?
     @NSManaged public var lastName: String?
@@ -23,6 +24,4 @@ extension CurrentUser {
 
 }
 
-extension CurrentUser : Identifiable {
-
-}
+extension CurrentUser: Identifiable {}

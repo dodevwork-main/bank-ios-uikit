@@ -31,7 +31,6 @@ final class AuthPinCodePoint: UIView {
     }
     
     private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         self.isSet = false
         
         self.layer.cornerRadius = size / 2

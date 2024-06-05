@@ -7,27 +7,19 @@
 
 import Foundation
 
-protocol PinCodeInteractorProtocol {
-    var presenter: PinCodePresenter? { get set }
-    
-    func savePinCode(_ pinCodeValue: String)
-    
-    func login()
+protocol PinCodeInteractorInput: AnyObject {
+    func signUp(authDto: AuthDtoProtocol)
+}
+protocol PinCodeInteractorOutput: AnyObject {
+    func didSignUp(newUser: User)
 }
 
-final class PinCodeInteractor: PinCodeInteractorProtocol {
+final class PinCodeInteractor {
+    weak var output: PinCodeInteractorOutput?
+}
 
-    var presenter: PinCodePresenter?
-    
-    func savePinCode(_ pinCodeValue: String) {
-        print("Save in CoreData PinCode - ", pinCodeValue)
-    }
-    
-    func saveCurrentUser(_ currentUser: User) {
-        print("Save in CoreData User - ", currentUser)
-    }
-    
-    func login() {
+extension PinCodeInteractor: PinCodeInteractorInput {
+    func signUp(authDto: AuthDtoProtocol) {
         guard let url = URL(string: API.getLoginUrl()) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
@@ -37,11 +29,9 @@ final class PinCodeInteractor: PinCodeInteractorProtocol {
             }
 
             do {
-                let currentUser = try JSONDecoder().decode(User.self, from: data)
+                let newUser = try JSONDecoder().decode(User.self, from: data)
                 
-                self?.saveCurrentUser(currentUser)
-                self?.presenter?.interactorDidLogin(with: currentUser)
-                
+                self?.output?.didSignUp(newUser: newUser)
             } catch let error {
                 print(error)
                 return

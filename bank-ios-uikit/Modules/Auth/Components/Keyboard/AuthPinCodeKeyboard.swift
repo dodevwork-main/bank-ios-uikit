@@ -8,7 +8,8 @@
 import UIKit
 
 protocol AuthPinCodeKeyboardDelegate: AnyObject {
-    func valueGot(_ newValue: String)
+    func pressNumberButton(value: String)
+    func pressDelete()
 }
 
 final class AuthPinCodeKeyboard: UIView {
@@ -53,6 +54,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button1: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("1", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -60,6 +62,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button2: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("2", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -67,6 +70,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button3: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("3", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -74,6 +78,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button4: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("4", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -81,6 +86,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button5: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("5", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -88,6 +94,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button6: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("6", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -95,6 +102,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button7: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("7", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -102,6 +110,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button8: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("8", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -109,6 +118,7 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button9: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("9", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
         return button
@@ -116,8 +126,20 @@ final class AuthPinCodeKeyboard: UIView {
     
     private lazy var button0: AuthPinCodeKeyboardButton = {
         let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("0", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var buttonDelete: AuthPinCodeKeyboardButton = {
+        let button = AuthPinCodeKeyboardButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "delete.left"), for: .normal)
+        button.tintColor = UIColor.white
+        button.addTarget(self, action: #selector(pressDelete), for: .touchUpInside)
+        
         return button
     }()
     
@@ -131,9 +153,7 @@ final class AuthPinCodeKeyboard: UIView {
         setup()
     }
     
-    private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
+    private func setup() {        
         self.addSubview(mainStack)
         
         // Lines
@@ -160,7 +180,7 @@ final class AuthPinCodeKeyboard: UIView {
         // Line - 4
         lineStack4.addArrangedSubview(UIView())
         lineStack4.addArrangedSubview(button0)
-        lineStack4.addArrangedSubview(UIView())
+        lineStack4.addArrangedSubview(buttonDelete)
         
         NSLayoutConstraint.activate([
             mainStack.topAnchor.constraint(equalTo: self.topAnchor),
@@ -171,6 +191,10 @@ final class AuthPinCodeKeyboard: UIView {
     }
     
     @objc func pressNumber(_ sender: UIButton) {
-        delegate?.valueGot(sender.titleLabel?.text ?? "")
+        delegate?.pressNumberButton(value: sender.titleLabel?.text ?? "")
+    }
+    
+    @objc func pressDelete() {
+        delegate?.pressDelete()
     }
 }

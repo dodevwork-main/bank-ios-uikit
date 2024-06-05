@@ -19,7 +19,6 @@ class AuthTitleLabel: UILabel {
     }
     
     private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = .white
         self.textAlignment = .center
         self.font = .boldSystemFont(ofSize: 28)

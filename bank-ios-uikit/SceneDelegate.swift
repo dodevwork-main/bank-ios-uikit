@@ -15,18 +15,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        print(CoreDataManager.shared.fetchCurrentUser(pinCode: "1231") ?? "")
+        // SignUp
+        var rootVC = UsernameAssebmly().makeModule()
         
-        let router = LoginRouter.start()
-        let initialViewController = router.entry!
-                
-        let navigation = UINavigationController()
-        navigation.viewControllers = [initialViewController]
+        // Login
+        if CoreDataManager.shared.haveAnyCurrentUsers() {
+            rootVC = LoginAssebmly().makeModule()
+        }
+        
+        let navigation = UINavigationController(rootViewController: rootVC)
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigation
         window.makeKeyAndVisible()
-        window.backgroundColor = AUTH_BACKGROUND_COLOR
+        window.backgroundColor = .prymaryBackground
         self.window = window
     }
 

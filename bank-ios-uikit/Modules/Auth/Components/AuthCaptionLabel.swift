@@ -19,7 +19,6 @@ class AuthCaptionLabel: UILabel {
     }
     
     private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = .gray
         self.textAlignment = .center
         self.numberOfLines = 2

@@ -8,39 +8,21 @@
 import Foundation
 import UIKit
 
-protocol PasswordRouterProtocol {
-    var entry: (UIViewController & PasswordViewControllerProtocol)? {get set}
-    
-    static func start() -> PasswordRouterProtocol
-    
-    func goToPinCode()
+protocol PasswordRouterInput: AnyObject {
+    func goToPinCode(authDto: AuthDtoProtocol)
 }
 
-final class PasswordRouter: PasswordRouterProtocol {
-    var entry: (UIViewController & PasswordViewControllerProtocol)?
-    
-    static func start() -> PasswordRouterProtocol {
-        let router = PasswordRouter()
+final class PasswordRouter {
+    weak var transitionHandler: UIViewController?
+}
+
+extension PasswordRouter: PasswordRouterInput {
+    func goToPinCode(authDto: AuthDtoProtocol) {
+        guard let transitionHandler else { return }
         
-        let viewController = PasswordViewController()
-        let presenter = PasswordPresenter()
+        let pinCodeModule = PinCodeAssembly().makeModule()
+        pinCodeModule.1.setAuthDto(authDto: authDto)
         
-        viewController.presenter = presenter
-        
-        presenter.router = router
-        presenter.viewController = viewController
-        
-        router.entry = viewController
-        
-        return router
-    }
-    
-    func goToPinCode() {
-        let pinCodeRouter = PinCodeRouter.start()
-        
-        guard let pinCodeViewController = pinCodeRouter.entry else { return }
-        guard let viewController = self.entry else { return }
-        
-        viewController.navigationController?.pushViewController(pinCodeViewController, animated: true)
+        transitionHandler.navigationController?.pushViewController(pinCodeModule.0, animated: true)
     }
 }

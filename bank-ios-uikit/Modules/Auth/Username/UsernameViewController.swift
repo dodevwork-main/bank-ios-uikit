@@ -1,29 +1,28 @@
 //
-//  PasswordViewController.swift
+//  UsernameViewController.swift
 //  bank-ios-uikit
 //
-//  Created by RYAZANTSEV Maksim on 31.05.2024.
+//  Created by RYAZANTSEV Maksim on 30.05.2024.
 //
 
 import UIKit
 
-protocol PasswordViewControllerInput: AnyObject {
+protocol UsernameViewControllerInput: AnyObject {
     
 }
 
-protocol PasswordViewControllerOutput: AnyObject {
-    func submit(password: String)
+protocol UsernameViewControllerOutput: AnyObject {
+    func submit(username: String)
 }
 
-final class PasswordViewController: UIViewController {
+final class UsernameViewController: UIViewController {
     
-    var output: PasswordViewControllerOutput?
-
+    var output: UsernameViewControllerOutput?
+    
     private lazy var textField: AuthTextField = {
         let textField = AuthTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Пароль"
-        textField.secureField()
+        textField.placeholder = "Логин"
         textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
         
         return textField
@@ -37,27 +36,11 @@ final class PasswordViewController: UIViewController {
         return button
     }()
     
-    private lazy var titleLalbel: AuthTitleLabel = {
-        let label = AuthTitleLabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Остался пароль"
-        
-        return label
-    }()
-    
-    private lazy var captioLabel: AuthCaptionLabel = {
-        let label = AuthCaptionLabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Убедимся, что это точно вы"
-        
-        return label
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .prymaryBackground
-    
+        
         configeViewComponents()
     }
     
@@ -72,21 +55,11 @@ final class PasswordViewController: UIViewController {
     }
     
     private func configeViewComponents() {
-        view.addSubview(titleLalbel)
-        view.addSubview(captioLabel)
         view.addSubview(textField)
         view.addSubview(authButton)
         
         NSLayoutConstraint.activate([
-            titleLalbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .mainPadding * 1.5),
-            titleLalbel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            titleLalbel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-
-            captioLabel.topAnchor.constraint(equalTo: titleLalbel.bottomAnchor, constant: .mainPadding / 2),
-            captioLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            captioLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            
-            textField.topAnchor.constraint(equalTo: captioLabel.bottomAnchor, constant: .mainPadding * 2),
+            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             textField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
             textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
             
@@ -105,8 +78,8 @@ final class PasswordViewController: UIViewController {
     }
     
     @objc func touchUpInsideAuthButton() {
-        output?.submit(password: textField.text ?? "")
+        output?.submit(username: textField.text ?? "")
     }
 }
 
-extension PasswordViewController: PasswordViewControllerInput {}
+extension UsernameViewController: UsernameViewControllerInput {}
