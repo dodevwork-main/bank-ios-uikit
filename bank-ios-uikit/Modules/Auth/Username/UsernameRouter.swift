@@ -20,9 +20,9 @@ extension UsernameRouter: UsernameRouterInput {
     func goToPassword(authDto: AuthDtoProtocol) {
         guard let transitionHandler else { return }
         
-        let passwordModule = PasswordAssebmly().makeModule()
-        passwordModule.1.setAuthDto(authDto: authDto)
+        let passwordModule = PasswordAssembly().makeModule()
+        passwordModule.moduleInput.setAuthDto(authDto: authDto)
         
-        transitionHandler.navigationController?.pushViewController(passwordModule.0, animated: true)
+        transitionHandler.navigationController?.pushViewController(passwordModule.viewController, animated: true)
     }
 }

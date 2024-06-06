@@ -16,11 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         // SignUp
-        var rootVC = UsernameAssebmly().makeModule()
+        var rootVC = UsernameAssembly().makeModule()
         
         // Login
         if CoreDataManager.shared.haveAnyCurrentUsers() {
-            rootVC = LoginAssebmly().makeModule()
+            rootVC = LoginAssembly().makeModule()
         }
         
         let navigation = UINavigationController(rootViewController: rootVC)

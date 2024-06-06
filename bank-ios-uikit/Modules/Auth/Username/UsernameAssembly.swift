@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class UsernameAssebmly {
+final class UsernameAssembly {
     
     func makeModule() -> UIViewController {
         let viewController = viewController()

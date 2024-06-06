@@ -7,11 +7,10 @@
 
 import Foundation
 
-final class API {
-    static let API_URL = "http://localhost:3000"
+enum API: String {
+    case mainUrl = "http://localhost:3000"
     
-    static func getLoginUrl() -> String {
-        return "\(API.API_URL)/rest/login"
+    var restLogin: String {
+        "\(API.mainUrl.rawValue)/rest/login"
     }
-
 }

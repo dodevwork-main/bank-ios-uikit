@@ -21,8 +21,8 @@ extension PasswordRouter: PasswordRouterInput {
         guard let transitionHandler else { return }
         
         let pinCodeModule = PinCodeAssembly().makeModule()
-        pinCodeModule.1.setAuthDto(authDto: authDto)
+        pinCodeModule.moduleInput.setAuthDto(authDto: authDto)
         
-        transitionHandler.navigationController?.pushViewController(pinCodeModule.0, animated: true)
+        transitionHandler.navigationController?.pushViewController(pinCodeModule.viewController, animated: true)
     }
 }

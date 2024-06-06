@@ -30,7 +30,7 @@ extension LoginRouter: LoginRouterInput {
     func goToUsernameModule() {
         guard let transitionHandler else { return }
         
-        let navigation = UINavigationController(rootViewController: UsernameAssebmly().makeModule())
+        let navigation = UINavigationController(rootViewController: UsernameAssembly().makeModule())
         navigation.modalPresentationStyle = .fullScreen
         
         transitionHandler.present(navigation, animated: true)

@@ -9,6 +9,7 @@ import Foundation
 
 final class LoginPresenter {
     
+    var interactor: LoginInteractorInput?
     weak var view: LoginViewControllerInput?
     private let router: LoginRouterInput?
     
@@ -29,9 +30,7 @@ extension LoginPresenter: LoginViewControllerOutput {
         view?.fillOnePoint()
 
         if pinCodeValue.count == 4 {
-            let currentUser = CoreDataManager.shared.fetchCurrentUser(pinCode: pinCodeValue)
-            
-            guard currentUser != nil else {
+            guard interactor?.login(with: pinCodeValue) != nil else {
                 // Reset PinCode
                 pinCodeValue = ""
                 view?.resetPoints()
@@ -52,8 +51,10 @@ extension LoginPresenter: LoginViewControllerOutput {
     }
     
     func logout() {
-        guard CoreDataManager.shared.deleteAllCurrentUsers() != nil else { return }
+        interactor?.deleteAllCurentUsers()
         
         router?.goToUsernameModule()
     }
 }
+
+extension LoginPresenter: LoginInteractorOutput {}

@@ -9,11 +9,11 @@ import CoreData
 import UIKit
 
 protocol CoreDataManagerCurrentUser {
-    func createCurrentUser(user: User, pinCode: String)
+    func createCurrentUser(user: User, pinCode: String) -> CurrentUser?
     func getCurrentUsers() -> [CurrentUser]
     func getCurrentUser(with pinCode: String) -> CurrentUser?
     func haveAnyCurrentUsers() -> Bool
-    func deleteAllCurrentUsers() -> [CurrentUser]?
+    func deleteAllCurrentUsers() -> [CurrentUser]
     func updateCurrentUser(id: String, email: String?, phoneNumber: String?) -> CurrentUser?
 }
 
@@ -29,26 +29,14 @@ final class CoreDataManager: NSObject {
     private var context: NSManagedObjectContext {
         appDelegate.persistentContainer.viewContext
     }
-    
-    func fetchCurrentUser(pinCode: String) -> CurrentUser? {
-        let fetchRequset = NSFetchRequest<NSFetchRequestResult>(entityName: CurrentUser.name)
-        do {
-            let users = try? context.fetch(fetchRequset) as? [CurrentUser]
-            return users?.first(where: {$0.pinCode == pinCode})
-        }
-    }
-    
-    func haveAnyCurrentUsers() {
-        
-    }
 }
 
 extension CoreDataManager: CoreDataManagerCurrentUser {
     
-    func createCurrentUser(user: User, pinCode: String) {
-        guard let entity = NSEntityDescription.entity(forEntityName: CurrentUser.name, in: context) else { return }
+    func createCurrentUser(user: User, pinCode: String) -> CurrentUser? {
+        guard let entity = NSEntityDescription.entity(forEntityName: CurrentUser.name, in: context) else { return nil }
         
-        guard getCurrentUsers().isEmpty else { return }
+        guard getCurrentUsers().isEmpty else { return nil }
         
         let currentUser = CurrentUser(entity: entity, insertInto: context)
         currentUser.id = user.id
@@ -59,6 +47,8 @@ extension CoreDataManager: CoreDataManagerCurrentUser {
         currentUser.pinCode = pinCode
         
         appDelegate.saveContext()
+        
+        return currentUser
     }
     
     func getCurrentUsers() -> [CurrentUser] {
@@ -98,7 +88,7 @@ extension CoreDataManager: CoreDataManagerCurrentUser {
         return currentUser
     }
     
-    func deleteAllCurrentUsers() -> [CurrentUser]? {
+    func deleteAllCurrentUsers() -> [CurrentUser] {
         let users = getCurrentUsers()
         users.forEach { context.delete($0) }
         

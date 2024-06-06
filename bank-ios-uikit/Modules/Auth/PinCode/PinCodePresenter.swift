@@ -60,7 +60,7 @@ extension PinCodePresenter: PinCodeInteractorOutput {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             
-            CoreDataManager.shared.createCurrentUser(user: newUser, pinCode: self.pinCodeValue)
+            interactor?.createCurrentUser(user: newUser, pinCode: self.pinCodeValue)
             
             self.router?.goToMainModule()
         }

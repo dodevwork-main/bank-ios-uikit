@@ -9,6 +9,8 @@ import Foundation
 
 protocol PinCodeInteractorInput: AnyObject {
     func signUp(authDto: AuthDtoProtocol)
+    
+    func createCurrentUser(user: User, pinCode: String)
 }
 protocol PinCodeInteractorOutput: AnyObject {
     func didSignUp(newUser: User)
@@ -16,11 +18,13 @@ protocol PinCodeInteractorOutput: AnyObject {
 
 final class PinCodeInteractor {
     weak var output: PinCodeInteractorOutput?
+    
+    var coreDataManagerCurrentUser: CoreDataManagerCurrentUser?
 }
 
 extension PinCodeInteractor: PinCodeInteractorInput {
     func signUp(authDto: AuthDtoProtocol) {
-        guard let url = URL(string: API.getLoginUrl()) else { return }
+        guard let url = URL(string: API.mainUrl.restLogin) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error == nil else {
@@ -39,5 +43,9 @@ extension PinCodeInteractor: PinCodeInteractorInput {
         }
         
         task.resume()
+    }
+    
+    func createCurrentUser(user: User, pinCode: String) {
+        _ = coreDataManagerCurrentUser?.createCurrentUser(user: user, pinCode: pinCode)
     }
 }

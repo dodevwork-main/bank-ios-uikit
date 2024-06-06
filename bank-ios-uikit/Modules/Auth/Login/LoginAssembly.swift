@@ -8,14 +8,16 @@
 import Foundation
 import UIKit
 
-final class LoginAssebmly {
+final class LoginAssembly {
     
     func makeModule() -> UIViewController {
         let viewController = viewController()
+        let interactor = interactor()
         let router = router(viewController: viewController)
-        let presenter = presenter(viewController: viewController, router: router)
+        let presenter = presenter(viewController: viewController, interactor: interactor, router: router)
         
         viewController.output = presenter
+        interactor.output = presenter
         
         return viewController
     }
@@ -31,9 +33,17 @@ final class LoginAssebmly {
         return router
     }
     
-    private func presenter(viewController: LoginViewControllerInput, router: LoginRouterInput) -> LoginPresenter {
+    private func interactor() -> LoginInteractor {
+        let interactor = LoginInteractor()
+        interactor.coreDataManagerCurrentUser = CoreDataManager.shared
+        
+        return interactor
+    }
+    
+    private func presenter(viewController: LoginViewControllerInput, interactor: LoginInteractorInput, router: LoginRouterInput) -> LoginPresenter {
         let presenter = LoginPresenter(router: router)
         presenter.view = viewController
+        presenter.interactor = interactor
         
         return presenter
     }

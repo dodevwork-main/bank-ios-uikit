@@ -10,7 +10,7 @@ import UIKit
 
 final class PinCodeAssembly {
     
-    func makeModule() -> (UIViewController, PinCodePresenter) {
+    func makeModule() -> (viewController: UIViewController, moduleInput: PinCodeModuleInput) {
         let viewController = viewController()
         let interactor = interactor()
         let router = router(viewController: viewController)
@@ -27,7 +27,10 @@ final class PinCodeAssembly {
     }
     
     private func interactor() -> PinCodeInteractor {
-        PinCodeInteractor()
+        let interactor = PinCodeInteractor()
+        interactor.coreDataManagerCurrentUser = CoreDataManager.shared
+        
+        return interactor
     }
     
     private func router(viewController: UIViewController) -> PinCodeRouter {

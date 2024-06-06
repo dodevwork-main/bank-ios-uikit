@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-final class PasswordAssebmly {
+final class PasswordAssembly {
     
-    func makeModule() -> (UIViewController, PasswordModuleInput) {
+    func makeModule() -> (viewController: UIViewController, moduleInput: PasswordModuleInput) {
         let viewController = viewController()
         let router = router(viewController: viewController)
         let presenter = presenter(viewController: viewController, router: router)
