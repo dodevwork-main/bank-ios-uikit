@@ -19,7 +19,6 @@ final class AuthPinCodeKeyboardButton: UIButton {
     }
     
     private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel?.font = .systemFont(ofSize: 50)
     }
 }

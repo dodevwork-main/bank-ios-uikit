@@ -6,14 +6,21 @@
 //
 
 import Foundation
-
 import UIKit
 
+protocol HomeViewControllerInput: AnyObject {}
+
+protocol HomeViewControllerOutput: AnyObject {}
+
 final class HomeViewController: UIViewController {
+    
+    var output: HomeViewControllerOutput?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        navigationItem.hidesBackButton = true
     }
 }
+
+extension HomeViewController: HomeViewControllerInput {}

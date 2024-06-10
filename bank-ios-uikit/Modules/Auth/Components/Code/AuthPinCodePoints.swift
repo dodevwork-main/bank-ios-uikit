@@ -13,24 +13,28 @@ final class AuthPinCodePoints: UIView {
     
     private lazy var point1: AuthPinCodePoint = {
         let point = AuthPinCodePoint()
+        point.translatesAutoresizingMaskIntoConstraints = false
         
         return point
     }()
     
     private lazy var point2: AuthPinCodePoint = {
         let point = AuthPinCodePoint()
+        point.translatesAutoresizingMaskIntoConstraints = false
         
         return point
     }()
 
     private lazy var point3: AuthPinCodePoint = {
         let point = AuthPinCodePoint()
+        point.translatesAutoresizingMaskIntoConstraints = false
         
         return point
     }()
 
     private lazy var point4: AuthPinCodePoint = {
         let point = AuthPinCodePoint()
+        point.translatesAutoresizingMaskIntoConstraints = false
         
         return point
     }()
@@ -41,6 +45,7 @@ final class AuthPinCodePoints: UIView {
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.spacing = 24
+        
         return stack
     }()
     
@@ -56,8 +61,6 @@ final class AuthPinCodePoints: UIView {
     }
     
     private func setup() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-
         self.addSubview(stack)
         
         stack.addArrangedSubview(point1)
@@ -72,13 +75,13 @@ final class AuthPinCodePoints: UIView {
     }
     
     func addOne() {
-        guard self.value < 4 else {
+        guard value < 4 else {
             return
         }
         
-        self.value += 1
+        value += 1
         
-        switch self.value {
+        switch value {
         case 1:
             point1.isSet = true
         case 2:
@@ -93,13 +96,13 @@ final class AuthPinCodePoints: UIView {
     }
     
     func subtractOne() {
-        guard self.value > 0 else {
+        guard value > 0 else {
             return
         }
         
-        self.value -= 1
+        value -= 1
         
-        switch self.value {
+        switch value {
         case 0:
             point1.isSet = false
         case 1:
@@ -111,7 +114,16 @@ final class AuthPinCodePoints: UIView {
         default:
             return
         }
+    }
+    
+    func reset() {
+        guard value > 0 else { return }
         
+        value = 0
         
+        point1.isSet = false
+        point2.isSet = false
+        point3.isSet = false
+        point4.isSet = false
     }
 }

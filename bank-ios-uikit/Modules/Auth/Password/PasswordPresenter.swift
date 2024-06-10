@@ -7,16 +7,33 @@
 
 import Foundation
 
-protocol PasswordPresenterProtocol {
-    var viewController: PasswordViewControllerProtocol? { get set }
-    var router: PasswordRouterProtocol? { get set }
+protocol PasswordModuleInput {
+    func setAuthDto(authDto: AuthDtoProtocol)
 }
 
-
-final class PasswordPresenter: PasswordPresenterProtocol {
-    var viewController: PasswordViewControllerProtocol?
+final class PasswordPresenter: PasswordModuleInput {
     
-    var router: PasswordRouterProtocol?
+    weak var view: PasswordViewControllerInput?
+    private let router: PasswordRouterInput?
     
+    private var authDto: AuthDtoProtocol?
     
+    init(router: PasswordRouterInput) {
+        self.router = router
+    }
+    
+    func setAuthDto(authDto: AuthDtoProtocol) {
+        self.authDto = authDto
+    }
 }
+
+extension PasswordPresenter: PasswordViewControllerOutput {
+    func submit(password: String) {
+        guard var authDto else { return }
+        
+        authDto.password = password
+        
+        router?.goToPinCode(authDto: authDto)
+    }
+}
+

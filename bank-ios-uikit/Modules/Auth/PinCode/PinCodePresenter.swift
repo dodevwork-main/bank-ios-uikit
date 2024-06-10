@@ -7,33 +7,61 @@
 
 import Foundation
 
-protocol PinCodePresenterProtocol {
-    var interactor: PinCodeInteractorProtocol? { get set }
-    var viewController: PinCodeViewControllerProtocol? { get set }
-    var router: PinCodeRouterProtocol? { get set }
-    
-    func setPinCode(_ pinCodeValue: String)
-    
-    func interactorDidLogin(with currentUser: User)
+protocol PinCodeModuleInput {
+    func setAuthDto(authDto: AuthDtoProtocol)
 }
 
-final class PinCodePresenter: PinCodePresenterProtocol {
-   
+final class PinCodePresenter: PinCodeModuleInput {
     
-    var interactor: PinCodeInteractorProtocol?
+    var interactor: PinCodeInteractorInput?
+    weak var view: PinCodeViewControllerInput?
+    private let router: PinCodeRouterInput?
     
-    var viewController: PinCodeViewControllerProtocol?
+    private var pinCodeValue: String = ""
+    private var authDto: AuthDtoProtocol?
     
-    var router: PinCodeRouterProtocol?
-    
-    func setPinCode(_ pinCodeValue: String) {
-        self.interactor?.savePinCode(pinCodeValue)
-        
-        self.interactor?.login()
+    init(router: PinCodeRouterInput) {
+        self.router = router
     }
     
-    func interactorDidLogin(with currentUser: User) {
-        DispatchQueue.main.async {
+    func setAuthDto(authDto: AuthDtoProtocol) {
+        self.authDto = authDto
+    }
+}
+
+extension PinCodePresenter: PinCodeViewControllerOutput {
+    
+    func addValueToPinCode(newValue: String) {
+        guard var authDto else { return }
+        
+        guard pinCodeValue.count < 4 else { return }
+        
+        pinCodeValue += newValue
+        authDto.pinCode = pinCodeValue
+        
+        view?.fillOnePoint()
+
+        if pinCodeValue.count == 4 {
+            interactor?.signUp(authDto: authDto)
+        }
+    }
+    
+    func subtractValueToPinCode() {
+        guard pinCodeValue.count > 0 else { return }
+        
+        pinCodeValue = String(pinCodeValue.dropLast())
+        
+        view?.unfillOnePoint()
+    }
+}
+
+extension PinCodePresenter: PinCodeInteractorOutput {
+    func didSignUp(newUser: User) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            
+            interactor?.createCurrentUser(user: newUser, pinCode: self.pinCodeValue)
+            
             self.router?.goToMainModule()
         }
     }

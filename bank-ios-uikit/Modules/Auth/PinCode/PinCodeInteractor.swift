@@ -7,28 +7,24 @@
 
 import Foundation
 
-protocol PinCodeInteractorProtocol {
-    var presenter: PinCodePresenter? { get set }
+protocol PinCodeInteractorInput: AnyObject {
+    func signUp(authDto: AuthDtoProtocol)
     
-    func savePinCode(_ pinCodeValue: String)
-    
-    func login()
+    func createCurrentUser(user: User, pinCode: String)
+}
+protocol PinCodeInteractorOutput: AnyObject {
+    func didSignUp(newUser: User)
 }
 
-final class PinCodeInteractor: PinCodeInteractorProtocol {
+final class PinCodeInteractor {
+    weak var output: PinCodeInteractorOutput?
+    
+    var coreDataManagerCurrentUser: CoreDataManagerCurrentUser?
+}
 
-    var presenter: PinCodePresenter?
-    
-    func savePinCode(_ pinCodeValue: String) {
-        print("Save in CoreData PinCode - ", pinCodeValue)
-    }
-    
-    func saveCurrentUser(_ currentUser: User) {
-        print("Save in CoreData User - ", currentUser)
-    }
-    
-    func login() {
-        guard let url = URL(string: API.getLoginUrl()) else { return }
+extension PinCodeInteractor: PinCodeInteractorInput {
+    func signUp(authDto: AuthDtoProtocol) {
+        guard let url = URL(string: API.mainUrl.restLogin) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error == nil else {
@@ -37,11 +33,9 @@ final class PinCodeInteractor: PinCodeInteractorProtocol {
             }
 
             do {
-                let currentUser = try JSONDecoder().decode(User.self, from: data)
+                let newUser = try JSONDecoder().decode(User.self, from: data)
                 
-                self?.saveCurrentUser(currentUser)
-                self?.presenter?.interactorDidLogin(with: currentUser)
-                
+                self?.output?.didSignUp(newUser: newUser)
             } catch let error {
                 print(error)
                 return
@@ -49,5 +43,9 @@ final class PinCodeInteractor: PinCodeInteractorProtocol {
         }
         
         task.resume()
+    }
+    
+    func createCurrentUser(user: User, pinCode: String) {
+        _ = coreDataManagerCurrentUser?.createCurrentUser(user: user, pinCode: pinCode)
     }
 }

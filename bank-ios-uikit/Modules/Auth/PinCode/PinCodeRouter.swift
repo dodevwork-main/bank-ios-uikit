@@ -8,41 +8,21 @@
 import Foundation
 import UIKit
 
-protocol PinCodeRouterProtocol {
-    var entry: (UIViewController & PinCodeViewControllerProtocol)? {get set}
-    
-    static func start() -> PinCodeRouterProtocol
-    
+protocol PinCodeRouterInput: AnyObject {
     func goToMainModule()
 }
 
-final class PinCodeRouter: PinCodeRouterProtocol {
-    var entry: (UIViewController & PinCodeViewControllerProtocol)?
-    
-    static func start() -> PinCodeRouterProtocol {
-        let router = PinCodeRouter()
-        
-        let viewController = PinCodeViewController()
-        let presenter = PinCodePresenter()
-        let interactor = PinCodeInteractor()
-        
-        viewController.presenter = presenter
-        interactor.presenter = presenter
-        
-        presenter.router = router
-        presenter.viewController = viewController
-        presenter.interactor = interactor
-        
-        router.entry = viewController
-        
-        return router
-    }
-    
+final class PinCodeRouter {
+    weak var transitionHandler: UIViewController?
+}
+
+extension PinCodeRouter: PinCodeRouterInput {
     func goToMainModule() {
-        let mainModuleViewController = HomeViewController()
-        guard let viewController = self.entry else { return }
+        guard let transitionHandler else { return }
         
-        viewController.navigationController?.pushViewController(mainModuleViewController, animated: true)
+        let navigation = UINavigationController(rootViewController: HomeAssebmly().makeModule())
+        navigation.modalPresentationStyle = .fullScreen
+        
+        transitionHandler.present(navigation, animated: true)
     }
-    
 }

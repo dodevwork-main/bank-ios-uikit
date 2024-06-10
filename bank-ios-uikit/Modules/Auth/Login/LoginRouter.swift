@@ -2,45 +2,37 @@
 //  LoginRouter.swift
 //  bank-ios-uikit
 //
-//  Created by RYAZANTSEV Maksim on 30.05.2024.
+//  Created by RYAZANTSEV Maksim on 04.06.2024.
 //
 
 import Foundation
 import UIKit
 
-protocol LoginRouterProtocol {
-    var entry: (UIViewController & LoginViewControllerProtocol)? {get set}
-    
-    static func start() -> LoginRouterProtocol
-    
-    func goToPassword()
+protocol LoginRouterInput: AnyObject {
+    func goToMainModule()
+    func goToUsernameModule()
 }
 
-final class LoginRouter: LoginRouterProtocol {
-    var entry: (UIViewController & LoginViewControllerProtocol)?
-    
-    static func start() -> LoginRouterProtocol {
-        let router = LoginRouter()
+final class LoginRouter {
+    weak var transitionHandler: UIViewController?
+}
+
+extension LoginRouter: LoginRouterInput {
+    func goToMainModule() {
+        guard let transitionHandler else { return }
         
-        let viewController = LoginViewController()
-        let presenter = LoginPresenter()
+        let navigation = UINavigationController(rootViewController: HomeAssebmly().makeModule())
+        navigation.modalPresentationStyle = .fullScreen
         
-        viewController.presenter = presenter
-        
-        presenter.router = router
-        presenter.viewController = viewController
-        
-        router.entry = viewController
-        
-        return router
+        transitionHandler.present(navigation, animated: true)
     }
     
-    func goToPassword() {
-        let passwordRouter = PasswordRouter.start()
+    func goToUsernameModule() {
+        guard let transitionHandler else { return }
         
-        guard let passwordViewController = passwordRouter.entry else { return }
-        guard let viewController = self.entry else { return }
+        let navigation = UINavigationController(rootViewController: UsernameAssembly().makeModule())
+        navigation.modalPresentationStyle = .fullScreen
         
-        viewController.navigationController?.pushViewController(passwordViewController, animated: true)
+        transitionHandler.present(navigation, animated: true)
     }
 }
