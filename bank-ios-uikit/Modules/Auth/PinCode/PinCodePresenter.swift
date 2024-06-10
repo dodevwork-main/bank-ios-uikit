@@ -32,16 +32,15 @@ final class PinCodePresenter: PinCodeModuleInput {
 extension PinCodePresenter: PinCodeViewControllerOutput {
     
     func addValueToPinCode(newValue: String) {
-        guard var authDto else { return }
-        
         guard pinCodeValue.count < 4 else { return }
         
         pinCodeValue += newValue
-        authDto.pinCode = pinCodeValue
+        self.authDto?.pinCode = pinCodeValue
         
         view?.fillOnePoint()
 
         if pinCodeValue.count == 4 {
+            guard let authDto else { return }
             interactor?.signUp(authDto: authDto)
         }
     }
@@ -60,9 +59,12 @@ extension PinCodePresenter: PinCodeInteractorOutput {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             
-            interactor?.createCurrentUser(user: newUser, pinCode: self.pinCodeValue)
+            guard let authDto = self.authDto else { return }
             
-            self.router?.goToMainModule()
+            guard let currentUser = interactor?.createCurrentUser(user: newUser, authDto: authDto) else { return }
+            print(currentUser)
+            
+            self.router?.goToMainModule(currentUser: currentUser)
         }
     }
 }

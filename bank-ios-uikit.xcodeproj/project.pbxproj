@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D28348911DE905880441B9B /* libPods-bank-ios-uikit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4CC69C54B3CC3F16FDF62A /* libPods-bank-ios-uikit.a */; };
 		B46163F42C0F2F7200F65A44 /* UsernameAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46163F32C0F2F7200F65A44 /* UsernameAssembly.swift */; };
 		B46163F92C0F2FBC00F65A44 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B46163F52C0F2FBC00F65A44 /* CoreData.xcdatamodeld */; };
 		B46163FA2C0F2FBC00F65A44 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46163F62C0F2FBC00F65A44 /* CoreDataManager.swift */; };
@@ -22,6 +23,28 @@
 		B46164102C1094EB00F65A44 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461640F2C1094EB00F65A44 /* HomePresenter.swift */; };
 		B46164122C1094F700F65A44 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164112C1094F700F65A44 /* HomeRouter.swift */; };
 		B46164142C119CAB00F65A44 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164132C119CAB00F65A44 /* LoginInteractor.swift */; };
+		B46164182C1214DF00F65A44 /* LottieAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164172C1214DF00F65A44 /* LottieAssembly.swift */; };
+		B461641A2C1214FA00F65A44 /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164192C1214FA00F65A44 /* LottieViewController.swift */; };
+		B461641C2C12150B00F65A44 /* LottieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461641B2C12150B00F65A44 /* LottieInteractor.swift */; };
+		B461641E2C12153900F65A44 /* LottiePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461641D2C12153900F65A44 /* LottiePresenter.swift */; };
+		B46164212C12154E00F65A44 /* LottieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164202C12154E00F65A44 /* LottieRouter.swift */; };
+		B46164232C12157400F65A44 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164222C12157400F65A44 /* HomeInteractor.swift */; };
+		B46164252C12158A00F65A44 /* SettingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164242C12158A00F65A44 /* SettingsAssembly.swift */; };
+		B46164272C1215A200F65A44 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164262C1215A200F65A44 /* SettingsViewController.swift */; };
+		B46164292C1215B900F65A44 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164282C1215B900F65A44 /* SettingsInteractor.swift */; };
+		B461642B2C1215CD00F65A44 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461642A2C1215CD00F65A44 /* SettingsPresenter.swift */; };
+		B461642D2C1215DC00F65A44 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461642C2C1215DC00F65A44 /* SettingsRouter.swift */; };
+		B46164302C1220BC00F65A44 /* MainModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461642F2C1220BC00F65A44 /* MainModuleAssembly.swift */; };
+		B46164362C12651E00F65A44 /* MainCardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164352C12651E00F65A44 /* MainCardCollectionCell.swift */; };
+		B46164382C1326AF00F65A44 /* MainHomeLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164372C1326AF00F65A44 /* MainHomeLines.swift */; };
+		B461643F2C138D6900F65A44 /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461643E2C138D6900F65A44 /* MainTextField.swift */; };
+		B46164452C1489EA00F65A44 /* MainSettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46164442C1489EA00F65A44 /* MainSettingsTextField.swift */; };
+		B4ADD5452C15067E00EF763F /* StandingsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ADD5442C15067E00EF763F /* StandingsAssembly.swift */; };
+		B4ADD5472C1506E100EF763F /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ADD5462C1506E100EF763F /* StandingsViewController.swift */; };
+		B4ADD5492C1506F300EF763F /* StandingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ADD5482C1506F300EF763F /* StandingsInteractor.swift */; };
+		B4ADD54B2C15070100EF763F /* StandingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ADD54A2C15070100EF763F /* StandingsPresenter.swift */; };
+		B4ADD54D2C15071000EF763F /* StandingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ADD54C2C15071000EF763F /* StandingsRouter.swift */; };
+		B4ADD54F2C16D8F600EF763F /* lottie-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ADD54E2C16D8F600EF763F /* lottie-animation.json */; };
 		B4DA8A012C08885800FECCEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A002C08885800FECCEF /* AppDelegate.swift */; };
 		B4DA8A0A2C08885900FECCEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4DA8A092C08885900FECCEF /* Assets.xcassets */; };
 		B4DA8A0D2C08885900FECCEF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B4DA8A0C2C08885900FECCEF /* Base */; };
@@ -30,8 +53,7 @@
 		B4DA8A292C08950200FECCEF /* UsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A282C08950200FECCEF /* UsernameViewController.swift */; };
 		B4DA8A352C08A60C00FECCEF /* UsernameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A342C08A60C00FECCEF /* UsernameRouter.swift */; };
 		B4DA8A392C08A63300FECCEF /* UsernamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A382C08A63300FECCEF /* UsernamePresenter.swift */; };
-		B4DA8A3B2C08AA2600FECCEF /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */; };
-		B4DA8A3D2C08B5B200FECCEF /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */; };
+		B4DA8A3B2C08AA2600FECCEF /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3A2C08AA2600FECCEF /* MainButton.swift */; };
 		B4DA8A402C08D86600FECCEF /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A3F2C08D86600FECCEF /* Main.swift */; };
 		B4DA8A422C09B88300FECCEF /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */; };
 		B4DA8A442C09B89200FECCEF /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */; };
@@ -51,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8EB5AF381779B8A46C160836 /* Pods-bank-ios-uikit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bank-ios-uikit.debug.xcconfig"; path = "Target Support Files/Pods-bank-ios-uikit/Pods-bank-ios-uikit.debug.xcconfig"; sourceTree = "<group>"; };
 		B46163F32C0F2F7200F65A44 /* UsernameAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameAssembly.swift; sourceTree = "<group>"; };
 		B46163F62C0F2FBC00F65A44 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B46163F82C0F2FBC00F65A44 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -66,6 +89,28 @@
 		B461640F2C1094EB00F65A44 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B46164112C1094F700F65A44 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B46164132C119CAB00F65A44 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		B46164172C1214DF00F65A44 /* LottieAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAssembly.swift; sourceTree = "<group>"; };
+		B46164192C1214FA00F65A44 /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
+		B461641B2C12150B00F65A44 /* LottieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieInteractor.swift; sourceTree = "<group>"; };
+		B461641D2C12153900F65A44 /* LottiePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottiePresenter.swift; sourceTree = "<group>"; };
+		B46164202C12154E00F65A44 /* LottieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieRouter.swift; sourceTree = "<group>"; };
+		B46164222C12157400F65A44 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		B46164242C12158A00F65A44 /* SettingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembly.swift; sourceTree = "<group>"; };
+		B46164262C1215A200F65A44 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B46164282C1215B900F65A44 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		B461642A2C1215CD00F65A44 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		B461642C2C1215DC00F65A44 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		B461642F2C1220BC00F65A44 /* MainModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleAssembly.swift; sourceTree = "<group>"; };
+		B46164352C12651E00F65A44 /* MainCardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardCollectionCell.swift; sourceTree = "<group>"; };
+		B46164372C1326AF00F65A44 /* MainHomeLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeLines.swift; sourceTree = "<group>"; };
+		B461643E2C138D6900F65A44 /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
+		B46164442C1489EA00F65A44 /* MainSettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsTextField.swift; sourceTree = "<group>"; };
+		B4ADD5442C15067E00EF763F /* StandingsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsAssembly.swift; sourceTree = "<group>"; };
+		B4ADD5462C1506E100EF763F /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
+		B4ADD5482C1506F300EF763F /* StandingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsInteractor.swift; sourceTree = "<group>"; };
+		B4ADD54A2C15070100EF763F /* StandingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsPresenter.swift; sourceTree = "<group>"; };
+		B4ADD54C2C15071000EF763F /* StandingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsRouter.swift; sourceTree = "<group>"; };
+		B4ADD54E2C16D8F600EF763F /* lottie-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-animation.json"; sourceTree = "<group>"; };
 		B4DA89FD2C08885800FECCEF /* bank-ios-uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bank-ios-uikit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DA8A002C08885800FECCEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4DA8A092C08885900FECCEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,8 +121,7 @@
 		B4DA8A282C08950200FECCEF /* UsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameViewController.swift; sourceTree = "<group>"; };
 		B4DA8A342C08A60C00FECCEF /* UsernameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameRouter.swift; sourceTree = "<group>"; };
 		B4DA8A382C08A63300FECCEF /* UsernamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernamePresenter.swift; sourceTree = "<group>"; };
-		B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		B4DA8A3A2C08AA2600FECCEF /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		B4DA8A3F2C08D86600FECCEF /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		B4DA8A412C09B88300FECCEF /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		B4DA8A432C09B89200FECCEF /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
@@ -94,6 +138,8 @@
 		B4DA8A652C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPinCodeKeyboardButton.swift; sourceTree = "<group>"; };
 		B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B4DA8A6D2C0D3F6A00FECCEF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E1ADDA5F27893F9182D45B27 /* Pods-bank-ios-uikit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bank-ios-uikit.release.xcconfig"; path = "Target Support Files/Pods-bank-ios-uikit/Pods-bank-ios-uikit.release.xcconfig"; sourceTree = "<group>"; };
+		EF4CC69C54B3CC3F16FDF62A /* libPods-bank-ios-uikit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bank-ios-uikit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D28348911DE905880441B9B /* libPods-bank-ios-uikit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,12 +175,99 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		B46164152C1214A100F65A44 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B46164172C1214DF00F65A44 /* LottieAssembly.swift */,
+				B46164192C1214FA00F65A44 /* LottieViewController.swift */,
+				B461641B2C12150B00F65A44 /* LottieInteractor.swift */,
+				B461641D2C12153900F65A44 /* LottiePresenter.swift */,
+				B46164202C12154E00F65A44 /* LottieRouter.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B46164162C1214A900F65A44 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B46164242C12158A00F65A44 /* SettingsAssembly.swift */,
+				B46164262C1215A200F65A44 /* SettingsViewController.swift */,
+				B46164282C1215B900F65A44 /* SettingsInteractor.swift */,
+				B461642A2C1215CD00F65A44 /* SettingsPresenter.swift */,
+				B461642C2C1215DC00F65A44 /* SettingsRouter.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B461642E2C121A6200F65A44 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B46164352C12651E00F65A44 /* MainCardCollectionCell.swift */,
+				B46164372C1326AF00F65A44 /* MainHomeLines.swift */,
+				B46164442C1489EA00F65A44 /* MainSettingsTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B461643D2C138D4600F65A44 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B461643E2C138D6900F65A44 /* MainTextField.swift */,
+				B4DA8A3A2C08AA2600FECCEF /* MainButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B46164402C13B07700F65A44 /* Standings */ = {
+			isa = PBXGroup;
+			children = (
+				B4ADD5442C15067E00EF763F /* StandingsAssembly.swift */,
+				B4ADD5462C1506E100EF763F /* StandingsViewController.swift */,
+				B4ADD5482C1506F300EF763F /* StandingsInteractor.swift */,
+				B4ADD54A2C15070100EF763F /* StandingsPresenter.swift */,
+				B4ADD54C2C15071000EF763F /* StandingsRouter.swift */,
+			);
+			path = Standings;
+			sourceTree = "<group>";
+		};
+		B46164412C13B08100F65A44 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		B46164422C13B09400F65A44 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		B46164432C13B0B300F65A44 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		B4ADD5412C14EC1A00EF763F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B4DA8A092C08885900FECCEF /* Assets.xcassets */,
+				B4ADD54E2C16D8F600EF763F /* lottie-animation.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		B4DA89F42C08885800FECCEF = {
 			isa = PBXGroup;
 			children = (
 				B4DA89FF2C08885800FECCEF /* bank-ios-uikit */,
 				B46163FB2C0F2FC800F65A44 /* CurrentUser+CoreDataProperties.swift */,
 				B4DA89FE2C08885800FECCEF /* Products */,
+				C53CDC2150AB9647B323EC81 /* Pods */,
+				FDB2CB613A4B005910339166 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +282,7 @@
 		B4DA89FF2C08885800FECCEF /* bank-ios-uikit */ = {
 			isa = PBXGroup;
 			children = (
+				B4ADD5412C14EC1A00EF763F /* Assets */,
 				B4DA8A002C08885800FECCEF /* AppDelegate.swift */,
 				B4DA8A1D2C08940800FECCEF /* Common */,
 				B4DA8A142C088EE600FECCEF /* Files */,
@@ -160,7 +295,6 @@
 		B4DA8A142C088EE600FECCEF /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				B4DA8A092C08885900FECCEF /* Assets.xcassets */,
 				B4DA8A0B2C08885900FECCEF /* LaunchScreen.storyboard */,
 				B4DA8A0E2C08885900FECCEF /* Info.plist */,
 			);
@@ -180,6 +314,7 @@
 		B4DA8A1D2C08940800FECCEF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B461643D2C138D4600F65A44 /* Components */,
 				B4DA8A3E2C08D84600FECCEF /* Constants */,
 				B4DA8A2A2C08A52400FECCEF /* Lib */,
 				B4DA8A1F2C08942400FECCEF /* Entities */,
@@ -200,8 +335,8 @@
 			children = (
 				B4DA8A4F2C0CFED700FECCEF /* Components */,
 				B46164012C0F3A5F00F65A44 /* Login */,
-				B4DA8A272C08948900FECCEF /* PinCode */,
 				B4DA8A262C08948300FECCEF /* Password */,
+				B4DA8A272C08948900FECCEF /* PinCode */,
 				B4DA8A252C08947A00FECCEF /* Username */,
 			);
 			path = Auth;
@@ -210,7 +345,11 @@
 		B4DA8A232C08945A00FECCEF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B461642F2C1220BC00F65A44 /* MainModuleAssembly.swift */,
+				B461642E2C121A6200F65A44 /* Components */,
 				B4DA8A672C0D29F200FECCEF /* Home */,
+				B46164152C1214A100F65A44 /* Lottie */,
+				B46164162C1214A900F65A44 /* Settings */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -218,6 +357,10 @@
 		B4DA8A242C08946000FECCEF /* League */ = {
 			isa = PBXGroup;
 			children = (
+				B46164432C13B0B300F65A44 /* Calendar */,
+				B46164422C13B09400F65A44 /* Player */,
+				B46164412C13B08100F65A44 /* Team */,
+				B46164402C13B07700F65A44 /* Standings */,
 			);
 			path = League;
 			sourceTree = "<group>";
@@ -279,8 +422,6 @@
 			children = (
 				B4DA8A622C0D13B800FECCEF /* Keyboard */,
 				B4DA8A612C0D0F6E00FECCEF /* Code */,
-				B4DA8A3C2C08B5B200FECCEF /* AuthTextField.swift */,
-				B4DA8A3A2C08AA2600FECCEF /* AuthButton.swift */,
 				B4DA8A502C0CFEFA00FECCEF /* AuthTitleLabel.swift */,
 				B4DA8A522C0CFF0700FECCEF /* AuthCaptionLabel.swift */,
 			);
@@ -310,10 +451,28 @@
 			children = (
 				B461640D2C1094DC00F65A44 /* HomeAssembly.swift */,
 				B4DA8A692C0D2A1300FECCEF /* HomeViewController.swift */,
+				B46164222C12157400F65A44 /* HomeInteractor.swift */,
 				B461640F2C1094EB00F65A44 /* HomePresenter.swift */,
 				B46164112C1094F700F65A44 /* HomeRouter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C53CDC2150AB9647B323EC81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EB5AF381779B8A46C160836 /* Pods-bank-ios-uikit.debug.xcconfig */,
+				E1ADDA5F27893F9182D45B27 /* Pods-bank-ios-uikit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FDB2CB613A4B005910339166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF4CC69C54B3CC3F16FDF62A /* libPods-bank-ios-uikit.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,9 +482,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4DA8A112C08885900FECCEF /* Build configuration list for PBXNativeTarget "bank-ios-uikit" */;
 			buildPhases = (
+				B4C056347642DFA007A32C33 /* [CP] Check Pods Manifest.lock */,
 				B4DA89F92C08885800FECCEF /* Sources */,
 				B4DA89FA2C08885800FECCEF /* Frameworks */,
 				B4DA89FB2C08885800FECCEF /* Resources */,
+				D86D5165BF07BF67E3023D01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -376,10 +537,53 @@
 			files = (
 				B4DA8A0A2C08885900FECCEF /* Assets.xcassets in Resources */,
 				B4DA8A0D2C08885900FECCEF /* Base in Resources */,
+				B4ADD54F2C16D8F600EF763F /* lottie-animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B4C056347642DFA007A32C33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bank-ios-uikit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D86D5165BF07BF67E3023D01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bank-ios-uikit/Pods-bank-ios-uikit-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bank-ios-uikit/Pods-bank-ios-uikit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bank-ios-uikit/Pods-bank-ios-uikit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4DA89F92C08885800FECCEF /* Sources */ = {
@@ -388,43 +592,63 @@
 			files = (
 				B46164002C0F335F00F65A44 /* PinCodeAssembly.swift in Sources */,
 				B461640C2C0F465100F65A44 /* AuthDto.swift in Sources */,
+				B461641E2C12153900F65A44 /* LottiePresenter.swift in Sources */,
 				B4DA8A212C08943E00FECCEF /* User.swift in Sources */,
 				B4DA8A5C2C0D014100FECCEF /* AuthPinCodePoint.swift in Sources */,
 				B4DA8A462C09B8A400FECCEF /* PasswordRouter.swift in Sources */,
+				B461643F2C138D6900F65A44 /* MainTextField.swift in Sources */,
 				B4DA8A6E2C0D3F6A00FECCEF /* API.swift in Sources */,
+				B461641A2C1214FA00F65A44 /* LottieViewController.swift in Sources */,
 				B4DA8A392C08A63300FECCEF /* UsernamePresenter.swift in Sources */,
 				B46164092C0F3EF500F65A44 /* LoginRouter.swift in Sources */,
+				B46164252C12158A00F65A44 /* SettingsAssembly.swift in Sources */,
 				B4DA8A012C08885800FECCEF /* AppDelegate.swift in Sources */,
 				B46163FA2C0F2FBC00F65A44 /* CoreDataManager.swift in Sources */,
 				B4DA8A532C0CFF0700FECCEF /* AuthCaptionLabel.swift in Sources */,
 				B4DA8A352C08A60C00FECCEF /* UsernameRouter.swift in Sources */,
 				B4DA8A5E2C0D03C400FECCEF /* AuthPinCodePoints.swift in Sources */,
-				B4DA8A3B2C08AA2600FECCEF /* AuthButton.swift in Sources */,
+				B4DA8A3B2C08AA2600FECCEF /* MainButton.swift in Sources */,
+				B4ADD5472C1506E100EF763F /* StandingsViewController.swift in Sources */,
 				B4DA8A4E2C09BE8B00FECCEF /* PinCodeRouter.swift in Sources */,
-				B4DA8A3D2C08B5B200FECCEF /* AuthTextField.swift in Sources */,
+				B46164452C1489EA00F65A44 /* MainSettingsTextField.swift in Sources */,
+				B461642D2C1215DC00F65A44 /* SettingsRouter.swift in Sources */,
 				B4DA8A6A2C0D2A1300FECCEF /* HomeViewController.swift in Sources */,
+				B46164362C12651E00F65A44 /* MainCardCollectionCell.swift in Sources */,
 				B46164102C1094EB00F65A44 /* HomePresenter.swift in Sources */,
 				B46164072C0F3EEB00F65A44 /* LoginPresenter.swift in Sources */,
 				B461640E2C1094DC00F65A44 /* HomeAssembly.swift in Sources */,
 				B4DA8A292C08950200FECCEF /* UsernameViewController.swift in Sources */,
+				B4ADD54D2C15071000EF763F /* StandingsRouter.swift in Sources */,
 				B4DA8A4A2C09BE6B00FECCEF /* PinCodeInteractor.swift in Sources */,
 				B46163F42C0F2F7200F65A44 /* UsernameAssembly.swift in Sources */,
+				B46164382C1326AF00F65A44 /* MainHomeLines.swift in Sources */,
+				B46164272C1215A200F65A44 /* SettingsViewController.swift in Sources */,
+				B4ADD54B2C15070100EF763F /* StandingsPresenter.swift in Sources */,
+				B46164302C1220BC00F65A44 /* MainModuleAssembly.swift in Sources */,
 				B46164142C119CAB00F65A44 /* LoginInteractor.swift in Sources */,
 				B46164122C1094F700F65A44 /* HomeRouter.swift in Sources */,
 				B46163FE2C0F334200F65A44 /* PasswordAssembly.swift in Sources */,
 				B46163F92C0F2FBC00F65A44 /* CoreData.xcdatamodeld in Sources */,
 				B4DA8A182C0892C700FECCEF /* SceneDelegate.swift in Sources */,
 				B4DA8A662C0D147E00FECCEF /* AuthPinCodeKeyboardButton.swift in Sources */,
+				B4ADD5452C15067E00EF763F /* StandingsAssembly.swift in Sources */,
+				B4ADD5492C1506F300EF763F /* StandingsInteractor.swift in Sources */,
+				B461641C2C12150B00F65A44 /* LottieInteractor.swift in Sources */,
 				B46164052C0F3ED400F65A44 /* LoginViewController.swift in Sources */,
+				B46164232C12157400F65A44 /* HomeInteractor.swift in Sources */,
 				B4DA8A512C0CFEFA00FECCEF /* AuthTitleLabel.swift in Sources */,
 				B4DA8A422C09B88300FECCEF /* PasswordViewController.swift in Sources */,
+				B46164182C1214DF00F65A44 /* LottieAssembly.swift in Sources */,
 				B4DA8A442C09B89200FECCEF /* PasswordPresenter.swift in Sources */,
 				B4DA8A642C0D13F600FECCEF /* AuthPinCodeKeyboard.swift in Sources */,
 				B46163FC2C0F2FC800F65A44 /* CurrentUser+CoreDataProperties.swift in Sources */,
+				B46164212C12154E00F65A44 /* LottieRouter.swift in Sources */,
 				B4DA8A482C09BE4E00FECCEF /* PinCodeViewController.swift in Sources */,
 				B46164032C0F3EB300F65A44 /* LoginAssembly.swift in Sources */,
 				B4DA8A402C08D86600FECCEF /* Main.swift in Sources */,
 				B4DA8A4C2C09BE7D00FECCEF /* PinCodePresenter.swift in Sources */,
+				B46164292C1215B900F65A44 /* SettingsInteractor.swift in Sources */,
+				B461642B2C1215CD00F65A44 /* SettingsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,11 +787,13 @@
 		};
 		B4DA8A122C08885900FECCEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EB5AF381779B8A46C160836 /* Pods-bank-ios-uikit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "bank-ios-uikit/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -589,11 +815,13 @@
 		};
 		B4DA8A132C08885900FECCEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1ADDA5F27893F9182D45B27 /* Pods-bank-ios-uikit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "bank-ios-uikit/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -19,18 +19,21 @@ final class UsernameViewController: UIViewController {
     
     var output: UsernameViewControllerOutput?
     
-    private lazy var textField: AuthTextField = {
-        let textField = AuthTextField()
+    private lazy var textField: MainTextField = {
+        let textField = MainTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Логин"
+        textField.textColor = .white
         textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
         
         return textField
     }()
     
-    private lazy var authButton: UIButton = {
-        let button = AuthButton()
+    private lazy var submitButton: MainButton = {
+        let button = MainButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isEnabled = false
+        button.setTitle("Продолжить", for: .normal)
         button.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
         
         return button
@@ -56,24 +59,25 @@ final class UsernameViewController: UIViewController {
     
     private func configeViewComponents() {
         view.addSubview(textField)
-        view.addSubview(authButton)
+        view.addSubview(submitButton)
         
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             textField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
             textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
+            textField.heightAnchor.constraint(equalToConstant: 44),
             
-            authButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
-            authButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
-            authButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -.mainPadding * 1.5),
+            submitButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
+            submitButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
+            submitButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -.mainPadding * 1.5),
         ])
     }
     
     @objc func editingChangedTextField() {
         if textField.text?.count ?? 0 > 5 {
-            authButton.isEnabled = true
+            submitButton.isEnabled = true
         } else {
-            authButton.isEnabled = false
+            submitButton.isEnabled = false
         }
     }
     

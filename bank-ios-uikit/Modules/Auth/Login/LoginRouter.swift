@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol LoginRouterInput: AnyObject {
-    func goToMainModule()
+    func goToMainModule(currentUser: CurrentUser)
     func goToUsernameModule()
 }
 
@@ -18,13 +18,10 @@ final class LoginRouter {
 }
 
 extension LoginRouter: LoginRouterInput {
-    func goToMainModule() {
+    func goToMainModule(currentUser: CurrentUser) {
         guard let transitionHandler else { return }
         
-        let navigation = UINavigationController(rootViewController: HomeAssebmly().makeModule())
-        navigation.modalPresentationStyle = .fullScreen
-        
-        transitionHandler.present(navigation, animated: true)
+        transitionHandler.present(MainModuleAssembly().makeModule(currentUser: currentUser), animated: true)
     }
     
     func goToUsernameModule() {

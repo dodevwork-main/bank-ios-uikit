@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var rootVC = UsernameAssembly().makeModule()
         
         // Login
-        if CoreDataManager.shared.haveAnyCurrentUsers() {
+        if let currentUser = CoreDataManager.shared.getCurrentUser() {
+            print("CurrentUser PinCode:", currentUser.pinCode ?? "", currentUser)
             rootVC = LoginAssembly().makeModule()
         }
         

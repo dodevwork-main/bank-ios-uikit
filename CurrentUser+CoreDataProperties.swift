@@ -21,7 +21,8 @@ extension CurrentUser {
     @NSManaged public var phoneNumber: String?
     @NSManaged public var email: String?
     @NSManaged public var pinCode: String?
-
+    @NSManaged public var password: String?
+    @NSManaged public var username: String?
 }
 
 extension CurrentUser: Identifiable {}

@@ -30,7 +30,7 @@ extension LoginPresenter: LoginViewControllerOutput {
         view?.fillOnePoint()
 
         if pinCodeValue.count == 4 {
-            guard interactor?.login(with: pinCodeValue) != nil else {
+            guard let currentUser = interactor?.login(with: pinCodeValue) else {
                 // Reset PinCode
                 pinCodeValue = ""
                 view?.resetPoints()
@@ -38,7 +38,7 @@ extension LoginPresenter: LoginViewControllerOutput {
                 return
             }
             
-            router?.goToMainModule()
+            router?.goToMainModule(currentUser: currentUser)
         }
     }
     
@@ -51,7 +51,7 @@ extension LoginPresenter: LoginViewControllerOutput {
     }
     
     func logout() {
-        interactor?.deleteAllCurentUsers()
+        interactor?.deleteCurentUser()
         
         router?.goToUsernameModule()
     }

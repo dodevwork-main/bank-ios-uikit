@@ -10,8 +10,11 @@ import UIKit
 
 extension CGFloat {
     static let mainPadding: CGFloat = 16
+    static let fontSize: CGFloat = 16
 }
 
 extension UIColor {
     static let prymaryBackground = UIColor(red: 0x2B / 255.0, green: 0x2D / 255.0, blue: 0x32 / 255.0, alpha: 1.0)
+    
+    static let prymaryMain = UIColor.yellow
 }
