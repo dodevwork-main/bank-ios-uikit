@@ -31,7 +31,7 @@ final class MainHomeLines: UIView {
     
     private func setup() {
         
-        var buttonTopAnchor = self.topAnchor
+        var buttonTopAnchor = topAnchor
         
         for i in 1...count {
             let button = UIButton()
@@ -74,7 +74,7 @@ final class MainHomeLines: UIView {
                 imageView.image = UIImage(systemName: "square")
             }
             
-            self.addSubview(button)
+            addSubview(button)
             
             button.addSubview(imageView)
             button.addSubview(label)
@@ -82,8 +82,8 @@ final class MainHomeLines: UIView {
             
             NSLayoutConstraint.activate([
                 button.topAnchor.constraint(equalTo: buttonTopAnchor),
-                button.leftAnchor.constraint(equalTo: self.leftAnchor),
-                button.rightAnchor.constraint(equalTo: self.rightAnchor),
+                button.leftAnchor.constraint(equalTo: leftAnchor),
+                button.rightAnchor.constraint(equalTo: rightAnchor),
                 
                 imageView.topAnchor.constraint(equalTo: button.topAnchor, constant: .mainPadding * 1.25),
                 imageView.bottomAnchor.constraint(equalTo: button.bottomAnchor, constant: -.mainPadding * 1.25),
@@ -102,7 +102,7 @@ final class MainHomeLines: UIView {
             
             // Set BottomAnchor for ScrollView
             if i == count {
-                button.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+                button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
                 divider.isHidden = true
             }
         }

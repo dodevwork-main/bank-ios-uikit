@@ -61,7 +61,7 @@ final class AuthPinCodePoints: UIView {
     }
     
     private func setup() {
-        self.addSubview(stack)
+        addSubview(stack)
         
         stack.addArrangedSubview(point1)
         stack.addArrangedSubview(point2)
@@ -69,8 +69,8 @@ final class AuthPinCodePoints: UIView {
         stack.addArrangedSubview(point4)
         
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: self.topAnchor),
-            stack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            stack.topAnchor.constraint(equalTo: topAnchor),
+            stack.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
     

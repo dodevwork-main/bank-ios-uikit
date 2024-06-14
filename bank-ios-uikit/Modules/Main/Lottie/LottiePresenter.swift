@@ -13,7 +13,6 @@ protocol LottieModuleInput {
 
 final class LottiePresenter {
     
-    var interactor: LottieInteractorInput?
     weak var view: LottieViewControllerInput?
     private let router: LottieRouterInput?
     
@@ -35,5 +34,3 @@ extension LottiePresenter: LottieViewControllerOutput {
         self.currentUser
     }
 }
-
-extension LottiePresenter: LottieInteractorOutput {}

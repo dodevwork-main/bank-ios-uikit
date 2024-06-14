@@ -13,7 +13,6 @@ protocol HomeModuleInput {
 
 final class HomePresenter {
     
-    var interactor: HomeInteractorInput?
     weak var view: HomeViewControllerInput?
     private let router: HomeRouterInput?
     
@@ -48,4 +47,3 @@ extension HomePresenter: HomeViewControllerOutput {
     }
 }
 
-extension HomePresenter: HomeInteractorOutput {}

@@ -14,22 +14,16 @@ final class LottieAssebmly {
     
     func makeModule() -> (viewController: UIViewController, moduleInput: LottieModuleInput) {
         let viewController = viewController()
-        let interactor = interactor()
         let router = router(viewController: viewController)
-        let presenter = presenter(viewController: viewController, interactor: interactor, router: router)
+        let presenter = presenter(viewController: viewController, router: router)
         
         viewController.output = presenter
-        interactor.output = presenter
         
         return (viewController, presenter)
     }
     
     private func viewController() -> LottieViewController {
         LottieViewController()
-    }
-    
-    private func interactor() -> LottieInteractor {
-        LottieInteractor()
     }
     
     private func router(viewController: UIViewController) -> LottieRouter {
@@ -39,10 +33,9 @@ final class LottieAssebmly {
         return router
     }
     
-    private func presenter(viewController: LottieViewControllerInput, interactor: LottieInteractorInput, router: LottieRouterInput) -> LottiePresenter {
+    private func presenter(viewController: LottieViewControllerInput, router: LottieRouterInput) -> LottiePresenter {
         let presenter = LottiePresenter(router: router)
         presenter.view = viewController
-        presenter.interactor = interactor
         
         return presenter
     }

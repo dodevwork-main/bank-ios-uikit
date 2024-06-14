@@ -36,19 +36,19 @@ final class MainSettingsTextField: UIView {
     }
     
     private func setup() {
-        self.addSubview(label)
-        self.addSubview(textField)
+        addSubview(label)
+        addSubview(textField)
         
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: self.topAnchor),
-            label.leftAnchor.constraint(equalTo: self.leftAnchor),
-            label.rightAnchor.constraint(equalTo: self.rightAnchor),
+            label.topAnchor.constraint(equalTo: topAnchor),
+            label.leftAnchor.constraint(equalTo: leftAnchor),
+            label.rightAnchor.constraint(equalTo: rightAnchor),
             
             textField.topAnchor.constraint(equalTo: label.bottomAnchor),
-            textField.rightAnchor.constraint(equalTo: self.rightAnchor),
-            textField.leftAnchor.constraint(equalTo: self.leftAnchor),
+            textField.rightAnchor.constraint(equalTo: rightAnchor),
+            textField.leftAnchor.constraint(equalTo: leftAnchor),
             textField.heightAnchor.constraint(equalToConstant: 50),
-            textField.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }

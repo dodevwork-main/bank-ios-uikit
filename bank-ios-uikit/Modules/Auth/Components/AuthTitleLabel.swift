@@ -19,9 +19,9 @@ class AuthTitleLabel: UILabel {
     }
     
     private func setup() {
-        self.textColor = .white
-        self.textAlignment = .center
-        self.font = .boldSystemFont(ofSize: 28)
-        self.adjustsFontForContentSizeCategory = true
+        textColor = .white
+        textAlignment = .center
+        font = .boldSystemFont(ofSize: 28)
+        adjustsFontForContentSizeCategory = true
     }
 }

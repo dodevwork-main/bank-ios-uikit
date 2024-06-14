@@ -12,7 +12,6 @@ final class MainCardCollectionCell: UICollectionViewCell {
     
     static let identifier = "MainCardCollectionCell"
     static let height: CGFloat = 80
-    static let count: Int = 5
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -33,14 +32,14 @@ final class MainCardCollectionCell: UICollectionViewCell {
     }
     
     private func setup() {
-        self.contentView.backgroundColor = .lightGray
-        self.contentView.layer.cornerRadius = 10
-        self.addSubview(label)
+        contentView.backgroundColor = .lightGray
+        contentView.layer.cornerRadius = 10
+        addSubview(label)
         
         NSLayoutConstraint.activate([
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -.mainPadding * 0.5),
-            label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: .mainPadding * 0.5),
-            label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -.mainPadding)
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.mainPadding * 0.5),
+            label.leftAnchor.constraint(equalTo: leftAnchor, constant: .mainPadding * 0.5),
+            label.rightAnchor.constraint(equalTo: rightAnchor, constant: -.mainPadding)
         ])
     }
     

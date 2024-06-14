@@ -40,16 +40,16 @@ class MainButton: UIButton {
     }
     
     private func setup() {
-        self.layer.cornerRadius = 10
-        self.isEnabled = true
+        layer.cornerRadius = 10
+        isEnabled = true
         
         
-        self.addSubview(self.title)
+        addSubview(title)
         
         NSLayoutConstraint.activate([
-            self.title.topAnchor.constraint(equalTo: self.topAnchor, constant: .mainPadding),
-            self.title.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -.mainPadding),
-            self.title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            title.topAnchor.constraint(equalTo: topAnchor, constant: .mainPadding),
+            title.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.mainPadding),
+            title.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
     

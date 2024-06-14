@@ -216,7 +216,7 @@ extension HomeViewController: HomeViewControllerInput {}
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        MainCardCollectionCell.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

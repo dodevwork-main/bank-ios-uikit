@@ -22,7 +22,7 @@ final class MainTextField: UITextField {
     
     override var placeholder: String? {
         didSet {
-            self.attributedPlaceholder = NSAttributedString(
+            attributedPlaceholder = NSAttributedString(
                 string: placeholder ?? "",
                 attributes: [.foregroundColor: UIColor.lightGray]
             )
@@ -56,31 +56,31 @@ final class MainTextField: UITextField {
     }
 
     private func setup() {
-        self.autocorrectionType = .no
-        self.autocapitalizationType = .none
-        self.delegate = self
-        self.textColor = .black
+        autocorrectionType = .no
+        autocapitalizationType = .none
+        delegate = self
+        textColor = .black
         
-        self.addSubview(borderBorromView)
+        addSubview(borderBorromView)
         
         NSLayoutConstraint.activate([
             borderBorromView.heightAnchor.constraint(equalToConstant: 1),
-            borderBorromView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            borderBorromView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            borderBorromView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            borderBorromView.leftAnchor.constraint(equalTo: leftAnchor),
+            borderBorromView.rightAnchor.constraint(equalTo: rightAnchor),
+            borderBorromView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
     func secureField(buttonTintColor: UIColor = .white) {
-        self.isSecureTextEntry = true
+        isSecureTextEntry = true
         
-        self.rightView = secureButton
-        self.rightViewMode = .always
-        self.secureButton.tintColor = buttonTintColor
+        rightView = secureButton
+        rightViewMode = .always
+        secureButton.tintColor = buttonTintColor
     }
     
     @objc func handleSecureButtonTochUpInside() {
-        self.isSecureTextEntry = !self.isSecureTextEntry
+        isSecureTextEntry = !isSecureTextEntry
     }
 }
 

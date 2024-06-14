@@ -13,9 +13,9 @@ final class AuthPinCodePoint: UIView {
     var isSet: Bool = false {
         didSet {
             if isSet {
-                self.backgroundColor = .white
+                backgroundColor = .white
             } else {
-                self.backgroundColor = .gray
+                backgroundColor = .gray
             }
         }
     }
@@ -31,12 +31,12 @@ final class AuthPinCodePoint: UIView {
     }
     
     private func setup() {
-        self.isSet = false
+        isSet = false
         
-        self.layer.cornerRadius = size / 2
+        layer.cornerRadius = size / 2
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: size),
-            self.widthAnchor.constraint(equalToConstant: size),
+            heightAnchor.constraint(equalToConstant: size),
+            widthAnchor.constraint(equalToConstant: size),
         ])
     }
 }
