@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginInteractorInput: AnyObject {
-    func deleteAllCurentUsers()
+    func deleteCurentUser()
     
     func login(with pinCode: String) -> CurrentUser?
 }
@@ -24,10 +24,14 @@ final class LoginInteractor {
 extension LoginInteractor: LoginInteractorInput {
     
     func login(with pinCode: String) -> CurrentUser? {
-        coreDataManagerCurrentUser?.getCurrentUser(with: pinCode)
+        let currentUser = coreDataManagerCurrentUser?.getCurrentUser()
+        
+        guard currentUser?.pinCode == pinCode else { return nil }
+        
+        return currentUser
     }
     
-    func deleteAllCurentUsers() {
-        _ = coreDataManagerCurrentUser?.deleteAllCurrentUsers()
+    func deleteCurentUser() {
+        _ = coreDataManagerCurrentUser?.deleteCurrentUser()
     }
 }

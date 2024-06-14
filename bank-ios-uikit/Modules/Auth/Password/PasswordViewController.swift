@@ -18,24 +18,6 @@ protocol PasswordViewControllerOutput: AnyObject {
 final class PasswordViewController: UIViewController {
     
     var output: PasswordViewControllerOutput?
-
-    private lazy var textField: AuthTextField = {
-        let textField = AuthTextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Пароль"
-        textField.secureField()
-        textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
-        
-        return textField
-    }()
-    
-    private lazy var authButton: UIButton = {
-        let button = AuthButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
-        
-        return button
-    }()
     
     private lazy var titleLalbel: AuthTitleLabel = {
         let label = AuthTitleLabel()
@@ -51,6 +33,27 @@ final class PasswordViewController: UIViewController {
         label.text = "Убедимся, что это точно вы"
         
         return label
+    }()
+
+    private lazy var textField: MainTextField = {
+        let textField = MainTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Пароль"
+        textField.secureField()
+        textField.textColor = .white
+        textField.addTarget(self, action: #selector(editingChangedTextField), for: .editingChanged)
+        
+        return textField
+    }()
+    
+    private lazy var submitButton: MainButton = {
+        let button = MainButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isEnabled = false
+        button.setTitle("Продолжить", for: .normal)
+        button.addTarget(self, action: #selector(touchUpInsideAuthButton), for: .touchUpInside)
+        
+        return button
     }()
     
     override func viewDidLoad() {
@@ -75,12 +78,13 @@ final class PasswordViewController: UIViewController {
         view.addSubview(titleLalbel)
         view.addSubview(captioLabel)
         view.addSubview(textField)
-        view.addSubview(authButton)
+        view.addSubview(submitButton)
         
         NSLayoutConstraint.activate([
             titleLalbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .mainPadding * 1.5),
             titleLalbel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             titleLalbel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 44),
 
             captioLabel.topAnchor.constraint(equalTo: titleLalbel.bottomAnchor, constant: .mainPadding / 2),
             captioLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -90,17 +94,17 @@ final class PasswordViewController: UIViewController {
             textField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
             textField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
             
-            authButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
-            authButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
-            authButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -.mainPadding * 1.5),
+            submitButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
+            submitButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
+            submitButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -.mainPadding * 1.5),
         ])
     }
     
     @objc func editingChangedTextField() {
         if textField.text?.count ?? 0 > 5 {
-            authButton.isEnabled = true
+            submitButton.isEnabled = true
         } else {
-            authButton.isEnabled = false
+            submitButton.isEnabled = false
         }
     }
     

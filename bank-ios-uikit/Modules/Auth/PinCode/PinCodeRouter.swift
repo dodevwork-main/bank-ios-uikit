@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol PinCodeRouterInput: AnyObject {
-    func goToMainModule()
+    func goToMainModule(currentUser: CurrentUser)
 }
 
 final class PinCodeRouter {
@@ -17,12 +17,9 @@ final class PinCodeRouter {
 }
 
 extension PinCodeRouter: PinCodeRouterInput {
-    func goToMainModule() {
+    func goToMainModule(currentUser: CurrentUser) {
         guard let transitionHandler else { return }
         
-        let navigation = UINavigationController(rootViewController: HomeAssebmly().makeModule())
-        navigation.modalPresentationStyle = .fullScreen
-        
-        transitionHandler.present(navigation, animated: true)
+        transitionHandler.present(MainModuleAssembly().makeModule(currentUser: currentUser), animated: true)
     }
 }

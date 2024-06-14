@@ -10,7 +10,7 @@ import Foundation
 protocol PinCodeInteractorInput: AnyObject {
     func signUp(authDto: AuthDtoProtocol)
     
-    func createCurrentUser(user: User, pinCode: String)
+    func createCurrentUser(user: User, authDto: AuthDtoProtocol) -> CurrentUser?
 }
 protocol PinCodeInteractorOutput: AnyObject {
     func didSignUp(newUser: User)
@@ -45,7 +45,7 @@ extension PinCodeInteractor: PinCodeInteractorInput {
         task.resume()
     }
     
-    func createCurrentUser(user: User, pinCode: String) {
-        _ = coreDataManagerCurrentUser?.createCurrentUser(user: user, pinCode: pinCode)
+    func createCurrentUser(user: User, authDto: AuthDtoProtocol) -> CurrentUser? {
+        return coreDataManagerCurrentUser?.createCurrentUser(user: user, authDto: authDto)
     }
 }

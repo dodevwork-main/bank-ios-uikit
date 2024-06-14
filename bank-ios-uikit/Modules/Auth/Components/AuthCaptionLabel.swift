@@ -19,9 +19,9 @@ class AuthCaptionLabel: UILabel {
     }
     
     private func setup() {
-        self.textColor = .gray
-        self.textAlignment = .center
-        self.numberOfLines = 2
-        self.adjustsFontSizeToFitWidth = true
+        textColor = .gray
+        textAlignment = .center
+        numberOfLines = 2
+        adjustsFontSizeToFitWidth = true
     }
 }

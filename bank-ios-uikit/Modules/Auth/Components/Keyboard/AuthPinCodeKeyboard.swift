@@ -21,6 +21,7 @@ final class AuthPinCodeKeyboard: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .fillEqually
+        
         return stack
     }()
     
@@ -28,6 +29,7 @@ final class AuthPinCodeKeyboard: UIView {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
+        
         return stack
     }()
     
@@ -35,6 +37,7 @@ final class AuthPinCodeKeyboard: UIView {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
+        
         return stack
     }()
     
@@ -42,6 +45,7 @@ final class AuthPinCodeKeyboard: UIView {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
+        
         return stack
     }()
     
@@ -49,6 +53,7 @@ final class AuthPinCodeKeyboard: UIView {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
+        
         return stack
     }()
     
@@ -57,6 +62,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("1", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -65,6 +71,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("2", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -73,6 +80,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("3", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -81,6 +89,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("4", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -89,6 +98,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("5", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -97,6 +107,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("6", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -105,6 +116,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("7", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -113,6 +125,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("8", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -121,6 +134,7 @@ final class AuthPinCodeKeyboard: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("9", for: .normal)
         button.addTarget(self, action: #selector(pressNumber), for: .touchUpInside)
+        
         return button
     }()
     
@@ -154,7 +168,7 @@ final class AuthPinCodeKeyboard: UIView {
     }
     
     private func setup() {        
-        self.addSubview(mainStack)
+        addSubview(mainStack)
         
         // Lines
         mainStack.addArrangedSubview(lineStack1)
@@ -183,10 +197,10 @@ final class AuthPinCodeKeyboard: UIView {
         lineStack4.addArrangedSubview(buttonDelete)
         
         NSLayoutConstraint.activate([
-            mainStack.topAnchor.constraint(equalTo: self.topAnchor),
-            mainStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            mainStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
-            mainStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            mainStack.topAnchor.constraint(equalTo: topAnchor),
+            mainStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+            mainStack.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            mainStack.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
     

@@ -9,12 +9,14 @@ import CoreData
 import UIKit
 
 protocol CoreDataManagerCurrentUser {
-    func createCurrentUser(user: User, pinCode: String) -> CurrentUser?
-    func getCurrentUsers() -> [CurrentUser]
-    func getCurrentUser(with pinCode: String) -> CurrentUser?
-    func haveAnyCurrentUsers() -> Bool
-    func deleteAllCurrentUsers() -> [CurrentUser]
-    func updateCurrentUser(id: String, email: String?, phoneNumber: String?) -> CurrentUser?
+    func createCurrentUser(user: User, authDto: AuthDtoProtocol) -> CurrentUser?
+    func getCurrentUser() -> CurrentUser?
+    func deleteCurrentUser() -> CurrentUser?
+    func updateCurrentUser(email: String?, 
+                           phoneNumber: String?,
+                           pinCode: String?,
+                           username: String?,
+                           password: String?) -> CurrentUser?
 }
 
 final class CoreDataManager: NSObject {
@@ -33,10 +35,11 @@ final class CoreDataManager: NSObject {
 
 extension CoreDataManager: CoreDataManagerCurrentUser {
     
-    func createCurrentUser(user: User, pinCode: String) -> CurrentUser? {
-        guard let entity = NSEntityDescription.entity(forEntityName: CurrentUser.name, in: context) else { return nil }
+    func createCurrentUser(user: User, authDto: AuthDtoProtocol) -> CurrentUser? {
+        // Check has CurrentUser
+        guard getCurrentUser() == nil else { return nil }
         
-        guard getCurrentUsers().isEmpty else { return nil }
+        guard let entity = NSEntityDescription.entity(forEntityName: CurrentUser.name, in: context) else { return nil }
         
         let currentUser = CurrentUser(entity: entity, insertInto: context)
         currentUser.id = user.id
@@ -44,56 +47,46 @@ extension CoreDataManager: CoreDataManagerCurrentUser {
         currentUser.lastName = user.lastName
         currentUser.email = user.email
         currentUser.phoneNumber = user.phoneNumber
-        currentUser.pinCode = pinCode
+        
+        currentUser.pinCode = authDto.pinCode
+        currentUser.password = authDto.password
+        currentUser.username = authDto.username
         
         appDelegate.saveContext()
         
         return currentUser
     }
     
-    func getCurrentUsers() -> [CurrentUser] {
+    func getCurrentUser() -> CurrentUser? {
         let fetchRequset = NSFetchRequest<NSFetchRequestResult>(entityName: CurrentUser.name)
         
-        return (try? context.fetch(fetchRequset) as? [CurrentUser]) ?? []
+        return (try? context.fetch(fetchRequset) as? [CurrentUser])?.first
     }
     
-    func getCurrentUser(with pinCode: String) -> CurrentUser? {
-        let users = getCurrentUsers()
+    func updateCurrentUser(email: String?,
+                           phoneNumber: String?,
+                           pinCode: String?,
+                           username: String?,
+                           password: String?) -> CurrentUser? {
+        guard let currentUser = getCurrentUser() else { return nil }
         
-        return users.first(where: {$0.pinCode == pinCode})
-    }
-    
-    func haveAnyCurrentUsers() -> Bool {
-        let users = getCurrentUsers()
-        print("users", users.map({ $0.pinCode ?? "nil" }))
-        
-        return !users.isEmpty
-    }
-    
-    func updateCurrentUser(id: String, email: String?, phoneNumber: String?) -> CurrentUser? {
-        let users = getCurrentUsers()
-        
-        guard let currentUser = users.first(where: { $0.id == id }) else { return nil }
-        
-        if let email {
-            currentUser.email = email
-        }
-        
-        if let phoneNumber {
-            currentUser.phoneNumber = phoneNumber
-        }
+        currentUser.email = email
+        currentUser.phoneNumber = phoneNumber
+        currentUser.pinCode = pinCode
+        currentUser.password = password
+        currentUser.username = username
         
         appDelegate.saveContext()
         
         return currentUser
     }
     
-    func deleteAllCurrentUsers() -> [CurrentUser] {
-        let users = getCurrentUsers()
-        users.forEach { context.delete($0) }
+    func deleteCurrentUser() -> CurrentUser? {
+        guard let currentUser = getCurrentUser() else { return nil }
         
+        context.delete(currentUser)
         appDelegate.saveContext()
         
-        return users
+        return currentUser
     }
 }

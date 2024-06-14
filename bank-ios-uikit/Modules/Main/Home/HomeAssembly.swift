@@ -10,14 +10,16 @@ import UIKit
 
 final class HomeAssebmly {
     
-    func makeModule() -> UIViewController {
+    static let tabTag = 0
+    
+    func makeModule() -> (viewController: UIViewController, moduleInput: HomeModuleInput) {
         let viewController = viewController()
         let router = router(viewController: viewController)
         let presenter = presenter(viewController: viewController, router: router)
         
         viewController.output = presenter
         
-        return viewController
+        return (viewController, presenter)
     }
     
     private func viewController() -> HomeViewController {
