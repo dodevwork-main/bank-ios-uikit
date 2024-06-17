@@ -10,7 +10,7 @@ import UIKit
 
 final class StandingsAssembly {
     
-    func makeModule() -> UIViewController {
+    func makeModule() -> (viewController: UIViewController, moduleInput: StandingsModuleInput) {
         let viewController = viewController()
         let interactor = interactor()
         let router = router(viewController: viewController)
@@ -19,11 +19,22 @@ final class StandingsAssembly {
         viewController.output = presenter
         interactor.output = presenter
         
-        return viewController
+        let navigationConroller = UINavigationController(rootViewController: viewController)
+        navigationConroller.navigationBar.tintColor = .yellow
+        
+        return (navigationConroller, presenter)
     }
     
     private func viewController() -> StandingsViewController {
-        StandingsViewController()
+        let viewController = StandingsViewController()
+        
+        let navigationBarAppearance = LeagueNavigationBarAppearance()
+
+        viewController.navigationItem.standardAppearance = navigationBarAppearance
+        viewController.navigationItem.compactAppearance = navigationBarAppearance
+        viewController.navigationItem.scrollEdgeAppearance = navigationBarAppearance
+        
+        return viewController
     }
     
     private func interactor() -> StandingsInteractor {

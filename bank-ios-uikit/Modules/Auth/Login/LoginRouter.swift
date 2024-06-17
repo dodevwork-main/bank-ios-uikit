@@ -18,6 +18,7 @@ final class LoginRouter {
 }
 
 extension LoginRouter: LoginRouterInput {
+    
     func goToMainModule(currentUser: CurrentUser) {
         guard let transitionHandler else { return }
         

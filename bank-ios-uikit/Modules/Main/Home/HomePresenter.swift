@@ -35,7 +35,9 @@ extension HomePresenter: HomeViewControllerOutput {
     }
     
     func pressLeagueButton() {
-        router?.goToLeague()
+        guard let currentUser else { return }
+        
+        router?.goToLeague(currentUser: currentUser)
     }
     
     func pressSettingsButton() {

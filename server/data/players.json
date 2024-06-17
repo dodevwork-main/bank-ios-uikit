@@ -1,7 +1,7 @@
 [
   {
-    "playerID": "gzkdsacvdsgzkdsacvds",
-    "teamID": "bizonsId",
+    "id": "gzkdsacvdsgzkdsacvds",
+    "teamId": "bizonsId",
     "name": "Оскар",
     "surName": "Харкитов",
     "number": 12,
@@ -12,8 +12,8 @@
     "titul": "1"
   },
   {
-    "playerID": "damsofkjsdamsofkjs",
-    "teamID": "bizonsId",
+    "id": "damsofkjsdamsofkjs",
+    "teamId": "bizonsId",
     "name": "Дмитрий",
     "surName": "Габриилов",
     "number": 11,
@@ -24,8 +24,8 @@
     "titul": "KMC"
   },
   {
-    "playerID": "sdnjncsdnmcnds",
-    "teamID": "bizonsId",
+    "id": "sdnjncsdnmcnds",
+    "teamId": "bizonsId",
     "name": "Максим",
     "surName": "Быков",
     "number": 33,
@@ -35,8 +35,8 @@
     "position": "forward"
   },
   {
-    "playerID": "ddweijdosjddweijdosj",
-    "teamID": "bizonsId",
+    "id": "ddweijdosjddweijdosj",
+    "teamId": "bizonsId",
     "name": "Евгений",
     "surName": "Синицын",
     "number": 22,
@@ -47,8 +47,8 @@
     "titul": "1"
   },
   {
-    "playerID": "gzpofds",
-    "teamID": "cyborgId",
+    "id": "gzpofds",
+    "teamId": "cyborgId",
     "name": "Павел",
     "surName": "Морозов",
     "number": 8,
@@ -58,8 +58,8 @@
     "position": "guard"
   },
   {
-    "playerID": "davfdmsoerfverkfkjs",
-    "teamID": "cyborgId",
+    "id": "davfdmsoerfverkfkjs",
+    "teamId": "cyborgId",
     "name": "Сергей",
     "surName": "Лазарев",
     "number": 69,
@@ -69,8 +69,8 @@
     "position": "guard"
   },
   {
-    "playerID": "fspc4a35ds",
-    "teamID": "cyborgId",
+    "id": "fspc4a35ds",
+    "teamId": "cyborgId",
     "name": "Устин",
     "surName": "Тарасов",
     "number": 6,
@@ -81,8 +81,8 @@
     "titul": "1"
   },
   {
-    "playerID": "dd23sac3dosj",
-    "teamID": "cyborgId",
+    "id": "dd23sac3dosj",
+    "teamId": "cyborgId",
     "name": "Петр",
     "surName": "Суворов",
     "number": 10,
@@ -92,8 +92,8 @@
     "position": "guard"
   },
   {
-    "playerID": "odl32njne",
-    "teamID": "oldSchoolId",
+    "id": "odl32njne",
+    "teamId": "oldSchoolId",
     "name": "Роман",
     "surName": "Голофаев",
     "number": 33,
@@ -104,8 +104,8 @@
     "titul": "МС"
   },
   {
-    "playerID": "dopoas3hn",
-    "teamID": "oldSchoolId",
+    "id": "dopoas3hn",
+    "teamId": "oldSchoolId",
     "name": "Сергей",
     "surName": "Байко",
     "number": 21,
@@ -116,8 +116,8 @@
     "titul": "1"
   },
   {
-    "playerID": "d325aqwsd",
-    "teamID": "oldSchoolId",
+    "id": "d325aqwsd",
+    "teamId": "oldSchoolId",
     "name": "Георгий",
     "surName": "Кошмаров",
     "number": 88,
@@ -127,8 +127,8 @@
     "position": "center"
   },
   {
-    "playerID": "dox32uais9",
-    "teamID": "oldSchoolId",
+    "id": "dox32uais9",
+    "teamId": "oldSchoolId",
     "name": "Стефан",
     "surName": "Йоркович",
     "number": 7,
@@ -138,8 +138,8 @@
     "position": "guard"
   },
   {
-    "playerID": "4fs9isjwj3",
-    "teamID": "raftId",
+    "id": "4fs9isjwj3",
+    "teamId": "raftId",
     "name": "Денис",
     "surName": "Назаренко",
     "number": 6,
@@ -150,8 +150,8 @@
     "titul": "KMC"
   },
   {
-    "playerID": "bgambbfgs",
-    "teamID": "raftId",
+    "id": "bgambbfgs",
+    "teamId": "raftId",
     "name": "Артур",
     "surName": "Сыендук",
     "number": 14,
@@ -161,8 +161,8 @@
     "position": "guard"
   },
   {
-    "playerID": "fraftnds",
-    "teamID": "raftId",
+    "id": "fraftnds",
+    "teamId": "raftId",
     "name": "Данила",
     "surName": "Калугин",
     "number": 41,
@@ -172,8 +172,8 @@
     "position": "guard"
   },
   {
-    "playerID": "vthzht63j",
-    "teamID": "raftId",
+    "id": "vthzht63j",
+    "teamId": "raftId",
     "name": "Никита",
     "surName": "Берёзов",
     "number": 5,
@@ -183,8 +183,8 @@
     "position": "forward"
   },
   {
-    "playerID": "densam",
-    "teamID": "SMEId",
+    "id": "densam",
+    "teamId": "SMEId",
     "name": "Денис",
     "surName": "Самойленко",
     "number": 23,
@@ -195,8 +195,8 @@
     "titul": "KMC"
   },
   {
-    "playerID": "lenkim",
-    "teamID": "SMEId",
+    "id": "lenkim",
+    "teamId": "SMEId",
     "name": "Леонид",
     "surName": "Лим",
     "number": 13,
@@ -207,8 +207,8 @@
     "titul": "KMC"
   },
   {
-    "playerID": "oldbars",
-    "teamID": "SMEId",
+    "id": "oldbars",
+    "teamId": "SMEId",
     "name": "Игорь",
     "surName": "Юрок",
     "number": 32,
@@ -218,8 +218,8 @@
     "position": "guard"
   },
   {
-    "playerID": "dimble",
-    "teamID": "SMEId",
+    "id": "dimble",
+    "teamId": "SMEId",
     "name": "Дмитрий",
     "surName": "Гидов",
     "number": 86,
@@ -229,8 +229,8 @@
     "position": "forward"
   },
   {
-    "playerID": "yarjar",
-    "teamID": "SMEId",
+    "id": "yarjar",
+    "teamId": "SMEId",
     "name": "Ярослав",
     "surName": "Жаров",
     "number": 5,
@@ -240,8 +240,8 @@
     "position": "forward"
   },
   {
-    "playerID": "gazvkaz",
-    "teamID": "PlatformId",
+    "id": "gazvkaz",
+    "teamId": "PlatformId",
     "name": "Александр",
     "surName": "Газаров",
     "number": 66,
@@ -251,8 +251,8 @@
     "position": "guard"
   },
   {
-    "playerID": "dwade",
-    "teamID": "PlatformId",
+    "id": "dwade",
+    "teamId": "PlatformId",
     "name": "Дмитрий",
     "surName": "Калашников",
     "number": 47,
@@ -262,8 +262,8 @@
     "position": "guard"
   },
   {
-    "playerID": "andrbir",
-    "teamID": "PlatformId",
+    "id": "andrbir",
+    "teamId": "PlatformId",
     "name": "Андрей",
     "surName": "Бирюков",
     "number": 33,
@@ -274,8 +274,8 @@
     "titul": "MC"
   },
   {
-    "playerID": "dennaz",
-    "teamID": "PlatformId",
+    "id": "dennaz",
+    "teamId": "PlatformId",
     "name": "Евгений",
     "surName": "Жаворонков",
     "number": 4,
@@ -286,8 +286,8 @@
     "titul": "KMC"
   },
   {
-    "playerID": "gzkdsacvds",
-    "teamID": "ELbrusId",
+    "id": "gzkdsacvds",
+    "teamId": "ELbrusId",
     "name": "Арсен",
     "surName": "Аваков",
     "number": 75,
@@ -297,8 +297,8 @@
     "position": "guard"
   },
   {
-    "playerID": "damsofkjs",
-    "teamID": "ELbrusId",
+    "id": "damsofkjs",
+    "teamId": "ELbrusId",
     "name": "Зураб",
     "surName": "Абзаков",
     "number": 33,
@@ -308,8 +308,8 @@
     "position": "forward"
   },
   {
-    "playerID": "fsdnjncsdnmcnds",
-    "teamID": "ELbrusId",
+    "id": "fsdnjncsdnmcnds",
+    "teamId": "ELbrusId",
     "name": "Василий",
     "surName": "Третьяков",
     "number": 13,
@@ -319,8 +319,8 @@
     "position": "guard"
   },
   {
-    "playerID": "ddweijdosj",
-    "teamID": "ELbrusId",
+    "id": "ddweijdosj",
+    "teamId": "ELbrusId",
     "name": "Сергей",
     "surName": "Дроздов",
     "number": 11,
@@ -330,8 +330,8 @@
     "position": "guard"
   },
   {
-    "playerID": "jenevg",
-    "teamID": "ELbrusId",
+    "id": "jenevg",
+    "teamId": "ELbrusId",
     "name": "Евгений",
     "surName": "Бойко",
     "number": 3,
@@ -342,8 +342,8 @@
     "titul": "2"
   },
   {
-    "playerID": "gjirads",
-    "teamID": "bambooId",
+    "id": "gjirads",
+    "teamId": "bambooId",
     "name": "Генадий",
     "surName": "Боткин",
     "number": 24,
@@ -353,8 +353,8 @@
     "position": "center"
   },
   {
-    "playerID": "dconfluencejs",
-    "teamID": "bambooId",
+    "id": "dconfluencejs",
+    "teamId": "bambooId",
     "name": "Зураб",
     "surName": "Церители",
     "number": 9,
@@ -364,8 +364,8 @@
     "position": "guard"
   },
   {
-    "playerID": "fsonars",
-    "teamID": "bambooId",
+    "id": "fsonars",
+    "teamId": "bambooId",
     "name": "Владимир",
     "surName": "Чужеземцев",
     "number": 31,
@@ -375,8 +375,8 @@
     "position": "forward"
   },
   {
-    "playerID": "artifactj",
-    "teamID": "bambooId",
+    "id": "artifactj",
+    "teamId": "bambooId",
     "name": "Михаил",
     "surName": "Кидало",
     "number": 5,
@@ -386,8 +386,8 @@
     "position": "guard"
   },
   {
-    "playerID": "cvfrviud",
-    "teamID": "bambooId",
+    "id": "cvfrviud",
+    "teamId": "bambooId",
     "name": "Халк",
     "surName": "Хоган",
     "number": 22,
@@ -397,8 +397,8 @@
     "dateBirth": "1988-11-04"
   },
   {
-    "playerID": "njopjbgfb",
-    "teamID": "fsddfgvdf",
+    "id": "njopjbgfb",
+    "teamId": "fsddfgvdf",
     "name": "Кирк",
     "surName": "Хайнрик",
     "number": 13,
