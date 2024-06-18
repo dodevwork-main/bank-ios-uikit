@@ -138,8 +138,8 @@ final class HomeViewController: UIViewController {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = .mainPadding
         view.backgroundColor = .white
+        view.layer.cornerRadius = .mainPadding
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         return view

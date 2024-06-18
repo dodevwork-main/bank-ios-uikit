@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol HomeRouterInput: AnyObject {
-    func goToLeague()
+    func goToLeague(currentUser: CurrentUser)
     func goToSettings()
     func goToLogin()
 }
@@ -25,10 +25,14 @@ extension HomeRouter: HomeRouterInput {
         transitionHandler.tabBarController?.selectedIndex = SettingsAssebmly.tabTag
     }
     
-    func goToLeague() {
+    func goToLeague(currentUser: CurrentUser) {
         guard let transitionHandler else { return }
         
-        transitionHandler.navigationController?.pushViewController(StandingsAssembly().makeModule(), animated: true)
+        let standingsModule = StandingsAssembly().makeModule()
+        standingsModule.moduleInput.setCurrentUser(currentUser: currentUser)
+        standingsModule.viewController.modalPresentationStyle = .fullScreen
+        
+        transitionHandler.present(standingsModule.viewController, animated: true)
     }
     
     func goToLogin() {

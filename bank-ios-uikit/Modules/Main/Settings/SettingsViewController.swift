@@ -109,10 +109,20 @@ final class SettingsViewController: UIViewController {
         return scrollView
     }()
     
+    private lazy var contrainerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = .mainPadding
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .white
+        
+        view.backgroundColor = .black
         
         configeViewComponents()
     }
@@ -126,15 +136,22 @@ final class SettingsViewController: UIViewController {
     }
     
     private func configeViewComponents() {
-        view.addSubview(scrollView)
-        view.addSubview(submitButton)
+        view.addSubview(contrainerView)
+        
+        contrainerView.addSubview(scrollView)
+        contrainerView.addSubview(submitButton)
         
         scrollView.addSubview(stack)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .mainPadding),
-            scrollView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: .mainPadding),
-            scrollView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -.mainPadding),
+            contrainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            contrainerView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            contrainerView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            contrainerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            scrollView.topAnchor.constraint(equalTo: contrainerView.topAnchor, constant: .mainPadding),
+            scrollView.leftAnchor.constraint(equalTo: contrainerView.leftAnchor, constant: .mainPadding),
+            scrollView.rightAnchor.constraint(equalTo: contrainerView.rightAnchor, constant: -.mainPadding),
             scrollView.bottomAnchor.constraint(equalTo: submitButton.topAnchor, constant: -.mainPadding),
             
             stack.topAnchor.constraint(equalTo: scrollView.topAnchor),
@@ -143,9 +160,9 @@ final class SettingsViewController: UIViewController {
             stack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stack.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            submitButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: .mainPadding),
-            submitButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -.mainPadding),
-            submitButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -.mainPadding),
+            submitButton.leftAnchor.constraint(equalTo: contrainerView.leftAnchor, constant: .mainPadding),
+            submitButton.rightAnchor.constraint(equalTo: contrainerView.rightAnchor, constant: -.mainPadding),
+            submitButton.bottomAnchor.constraint(equalTo: contrainerView.keyboardLayoutGuide.topAnchor, constant: -.mainPadding),
         ])
     }
     
